@@ -1,0 +1,489 @@
+\chapter{Propositional Logic}
+
+We begin by defining the syntax and semantics of propositional logic, using an inductive type
+of formulas, valuations, and the notions of satisfiability.
+
+\section{Formulas}
+
+\begin{definition}
+    \label{Formula}
+    \lean{LHCP.Formula}
+    \leanok
+    The set of \emph{formulas} $\Formula$ is defined inductively as
+    \begin{itemize}
+        \item $\Atom(n) \in \Formula$.
+        \item $\Neg(f) \in \Formula$ for all $f \in \Formula$.
+        \item $\Imp(f_1, f_2) \in \Formula$ for all $f, g \in \Formula$.
+    \end{itemize}
+
+\end{definition}
+
+\begin{notation}
+    \label{neg_notation}
+    We write $\neg \Formula$ for $\Neg(\Formula)$ when the notation is nonambiguous.
+\end{notation}
+
+\begin{notation}
+    \label{imp_notation}
+    We write $f_1 \to f_2$ for $\Imp(f_1, f_2)$ when the notation is nonambiguous.
+\end{notation}
+
+\section{Valuations and Semantics}
+
+\begin{definition}
+    \label{Valuation}
+    \lean{LHCP.Valuation}
+    \leanok
+    A \emph{valuation} is a function $v : \N \to \Bool$ assigning truth values to atoms.
+\end{definition}
+
+\begin{definition}
+    \label{Valuation.eval}
+    \lean{LHCP.Valuation.eval}
+    \leanok
+    \uses{Formula, Valuation}
+    Given a valuation $v$ and a formula $f$, the evaluation $v.\eval(f) : \Bool$ is defined recursively in $f$ as
+    \[
+    \begin{aligned}
+        v.\eval(\Atom(n)) &:= v(n), \\
+        v.\eval(\Neg(f_1)) &:= \neg \, v.\eval(f_1), \\
+        v.\eval(\Imp(f_1, f_2)) &:= \ite{v.\eval(f_1) = \true}{v.\eval(f_2)}{\true}
+    \end{aligned}
+    \]
+\end{definition}
+
+\begin{notation}
+    \label{Valuation.eval_notation}
+    \leanok
+    We write $v[f]$ for $v.\eval(f)$.
+\end{notation}
+
+\begin{definition}
+    \label{Satisfies}
+    \lean{LHCP.Satisfies}
+    \leanok
+    \uses{Valuation.eval}
+    A valuation $v$ \emph{satisfies} a formula $F$, written $v \models F$, if $v.\eval(F) = \true$.
+\end{definition}
+
+\begin{definition}
+    \label{Satisfiable}
+    \lean{LHCP.Satisfiable}
+    \leanok
+    \uses{Satisfies}
+    A formula $F$ is \emph{satisfiable}, written $F \sat$, if there exists a valuation $v$ such that $v \models F$.
+\end{definition}
+
+\section{Derived Connectives}
+
+\begin{definition}
+    \label{And}
+    \lean{LHCP.Formula.And}
+    \leanok
+    \uses{Formula}
+    For formulas $A$ and $B$, the conjunction $A \wedge B$ is defined as
+    \[
+    A \wedge B := \neg (A \to \neg B).
+    \]
+\end{definition}
+
+\begin{definition}
+    \label{Iff}
+    \lean{LHCP.Formula.Iff}
+    \leanok
+    \uses{And}
+    For formulas $A$ and $B$, the biconditional $A \leftrightarrow B$ is defined as
+    \[
+    A \leftrightarrow B := (A \to B) \wedge (B \to A).
+    \]
+\end{definition}
+
+\begin{definition}
+    \label{BigAnd}
+    \lean{LHCP.Formula.BigAnd}
+    \leanok
+    \uses{And}
+    Let $l$ be a nonempty list of formulas of length $n$. We define
+    \[
+    \bigwedge l := l[0] \land l[1] \land ... \land l[n - 1]
+    \]
+\end{definition}
+
+\section{Non-atomic formulas}
+
+\begin{definition}
+    \label{NonAtomic}
+    \lean{LHCP.NonAtomic}
+    \leanok
+    \uses{Formula}
+    A formula $f$ is called \emph{non-atomic}, if it is not of the form $\Atom{n}$.
+\end{definition}
+
+\begin{lemma}
+    \label{NonAtomic.neg}
+    \lean{LHCP.NonAtomic.neg}
+    \leanok
+    \uses{NonAtomic}
+    For any formula $f$, $\neg f$ is non-atomic.
+\end{lemma}
+
+\begin{lemma}
+    \label{NonAtomic.imp}
+    \lean{LHCP.NonAtomic.imp}
+    \leanok
+    \uses{NonAtomic}
+    For any formulas $f_1, f_2$, $(f_1 \to f_2)$ is non-atomic.
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\section{Injective numbering of formulas}
+
+\begin{lemma}
+    \label{Formula.existsChooseFn}
+    \lean{LHCP.Formula.existsChooseFn}
+    \leanok
+    \uses{Formula}
+    There exists an injection $\Formula \to \N$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    This follows from the fact that \Formula{} is countable.
+    % TODO reference Countable.countable_iff_exists_injective
+\end{proof}
+
+\section{Tseitin encoding}
+
+\begin{definition}
+    \label{Tseitin.V}
+    \lean{LHCP.Tseitin.V}
+    \leanok
+    \uses{Formula.existsChooseFn}
+    For each formula $f$, $V_f$ is the atom given by the injection in \ref{Formula.existsChooseFn}.
+\end{definition}
+
+\begin{definition}
+    \label{Tseitin.N}
+    \lean{LHCP.Tseitin.N}
+    \leanok
+    \uses{Tseitin.V}
+    For a formula $f$, $N(f)$ is the list of formulas
+    \[
+    N(f) := \begin{cases}
+        [\ ] & f = \Atom(n) \\
+        \left[ V_f \leftrightarrow \neg V_g \right] & f = \neg g \\
+        \left[ V_f \leftrightarrow (V_g \to V_h) \right] & f = g \to h
+    \end{cases}
+    \]
+\end{definition}
+
+\begin{definition}
+    \label{Tseitin.Ns}
+    \lean{LHCP.Tseitin.Ns}
+    \leanok
+    \uses{Tseitin.N}
+    For a formula $f$, $N^*(f)$ is the list of all $N(g)$ of all subformulas $g$ of $f$.
+    \[
+    N^*(f) :=
+    \begin{cases}
+        [\ ] & f = \Atom(n) \\
+        N(f) \cup N^*(g) & f = \neg g \\
+        N(f) \cup N^*(f_1) \cup N^*(f_2) & f = f_1 \to f_2
+    \end{cases}
+    \]
+    where $\cup$ denotes list concatenation.
+\end{definition}
+
+\begin{definition}
+    \label{Tseitin.T}
+    \lean{LHCP.Tseitin.T}
+    \leanok
+    \uses{Tseitin.Ns, BigAnd, NonAtomic}
+    Let $f$ be a non-atomic formula.
+    \emph{Tseitin's T} of $f$ is the conjunction of all $N(g)$ of all subformulas $g$ of $f$.
+    Equivalently, it's the conjunction of $N^*(f)$.
+    \[
+    T(f) := \bigwedge N^*(f)
+    \]
+\end{definition}
+
+\begin{definition}
+    \label{Tseitin.E}
+    \lean{LHCP.Tseitin.E}
+    \leanok
+    \uses{Tseitin.T, Tseitin.V}
+    Let $f$ be a formula.
+    The \emph{Tseitin encoding} $E(f)$ is $T(f) \land V_f$ unless $f$ is atomic, in which case it's just $V_f$.
+    \[
+    E(f) := \begin{cases}
+        V_f & f = \Atom(n) \\
+        T(f) \wedge V_f & \text{otherwise}\\
+    \end{cases}
+    \]
+\end{definition}
+
+\section{Atoms and subformulas}
+
+\begin{definition}
+    \label{Atoms}
+    \lean{LHCP.Tseitin.Atoms}
+    \leanok
+    \uses{Formula}
+    For a formula $f$, define $\Atoms(f)$ to be the (finite) set of indices of all atomic subformulas of $f$.
+    It is defined recursively as:
+
+    \[
+    \begin{aligned}
+        \Atoms(\Atom(n)) &:= \{n\} \\
+        \Atoms(\neg g) &:= \Atoms(g) \\
+        \Atoms(g \to h) &:= \Atoms(g) \cup \Atoms(h) \\
+    \end{aligned}
+    \]
+\end{definition}
+
+\begin{definition}
+    \label{Sub}
+    \lean{LHCP.Tseitin.Sub}
+    \leanok
+    \uses{Formula}
+    For a formula $f$, define $\Sub(f)$ to be the (finite) set of subformulas of $f$.
+    It is defined recursively as:
+
+    \[
+    \begin{align}
+        \Sub(\Atom(n)) &:= \{\Atom(n)\} \\
+        \Sub(\neg g) &:= \{\neg g\} \cup \Sub(g) \\
+        \Sub(g \to h) &:= \{g \to h\} \cup \Sub(g) \cup \Sub(h) \\
+    \end{align}
+    \]
+\end{definition}
+
+\begin{lemma}
+    \label{mem_atoms_of_subformula}
+    \lean{LHCP.Tseitin.mem_atoms_of_subformula}
+    \leanok
+    \uses{Atoms, Sub}
+    If an atom is a subformula of $g$, it's index is in $\Atoms(g)$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    By induction on $g$.
+\end{proof}
+
+\section{Semantics of derived connectives}
+
+\begin{lemma}
+    \label{BigAnd.append}
+    \lean{LHCP.BigAnd.append}
+    \uses{BigAnd}
+    For nonempty lists of formulas $f, g$:
+    \[
+    \bigwedge (f \cup g) = \left(\bigwedge f\right) \wedge \left(\bigwedge g\right).
+    \]
+\end{lemma}
+\begin{proof}
+    By induction on $f$.
+\end{proof}
+
+\begin{lemma}
+    \label{BigAnd.cons}
+    \lean{LHCP.BigAnd.cons}
+    \uses{BigAnd}
+    For a formula $f$ and a nonempty list of formulas $fs$:
+    \[
+    \bigwedge (f :: fs) = f \wedge \bigwedge fs.
+    \]
+\end{lemma}
+\begin{proof}
+    By unfolding the recursive definition of \BigAnd.
+\end{proof}
+
+\begin{lemma}
+    \label{BigAnd.single}
+    \lean{LHCP.BigAnd.single}
+    \uses{BigAnd}
+    For a single-element list:
+    \[
+    \bigwedge [f] = f.
+    \]
+\end{lemma}
+\begin{proof}
+    Immediate from the definition of \BigAnd.
+\end{proof}
+
+\begin{lemma}
+    \label{Satisfies.and}
+    \lean{LHCP.Satisfies.and}
+    \uses{Satisfies, And}
+    For any valuation $w$ and formulas $f,g$, $w \models f \wedge g$ iff $w \models f$ and $w \models g$.
+\end{lemma}
+
+\begin{lemma}
+    \label{Satisfies.iff}
+    \lean{LHCP.Satisfies.iff}
+    \uses{Satisfies, Iff}
+    For any valuation $w$ and formulas $f,g$: $w \models f \leftrightarrow g$ iff $(w \models f) \Leftrightarrow (w \models g)$.
+\end{lemma}
+
+\begin{lemma}
+    \label{Satisfies.bigAnd}
+    \lean{LHCP.Satisfies.bigAnd}
+    \leanok
+    \uses{Satisfies, And}
+    For any valuation $w$ and a nonempty list of formulas $l$, $w \models \bigwedge l$ iff $w \models g$ for all $g \in l$.
+\end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\section{Auxiliary lemmas for Tseitin encoding}
+
+\begin{lemma}
+    \label{Ns_eq_empty_iff}
+    \lean{LHCP.Ns_eq_empty_iff}
+    \leanok
+    \uses{NonAtomic, Tseitin.Ns}
+    For any formula $f$, $N^*(f)$ is empty iff $f$ is atomic.
+\end{lemma}
+
+\begin{lemma}
+    \label{not_nonAtomic}
+    \lean{LHCP.not_nonAtomic}
+    \leanok
+    \uses{NonAtomic}
+    For any formula $f$, $f$ is atomic iff there is some $n$ s.t. $f = \Atom(n)$.
+\end{lemma}
+
+\section{Subformulas and Proper Subformulas}
+
+\begin{lemma}
+    \label{sub_self}
+    \lean{LHCP.sub_self}
+    \leanok
+    \uses{Sub}
+    $f$ is a subformula of itself.
+\end{lemma}
+
+\begin{lemma}
+    \label{sub_neg}
+    \lean{LHCP.sub_neg}
+    \leanok
+    \uses{Sub}
+    If $g$ is a subformula of $f$, then $g$ is a subformula of $\neg f$.
+\end{lemma}
+
+\begin{lemma}
+    \label{sub_imp}
+    \lean{LHCP.sub_imp}
+    \leanok
+    \uses{Sub}
+    If $g$ is a subformula of $f_1$ or a subformula of $f_2$, then it is a subformula of $f_1 \to f_2$.
+\end{lemma}
+
+\begin{lemma}
+    \label{neg_sub}
+    \lean{LHCP.neg_sub}
+    \uses{Sub, sub_self}
+    If $\neg g$ is a subformula of $f$, then $g$ is a subformula of $f$.
+\end{lemma}
+
+\begin{lemma}
+    \label{imp_sub}
+    \lean{imp_sub}
+    \leanok
+    \uses{Sub}
+    If $(g_1 \to g_2)$ is a subformula of $f$, then both $g_1$ and $g_2$ are also subformulas of $f$.
+\end{lemma}
+
+\begin{definition}[Proper subformula]
+    \label{Ssub}
+    \lean{Ssub}
+    \leanok
+    \uses{Sub}
+    $g$ is a proper subformula of $f$ it is a subformula and not equal to $f$.
+    
+    Let $\Ssub(f)$ denote the set of proper subformulas of $f$, i.e.\
+    \[
+    \Ssub(f) := \Sub(f) \setminus \{ f \}.
+    \]
+\end{definition}
+
+\begin{lemma}
+    \label{sub_smaller}
+    \lean{sub_smaller}
+    \leanok
+    \uses{Sub}
+    If $g$ is a subformula of $f$, then $g$ is at most the size of $f$.
+\end{lemma}
+
+\begin{lemma}
+    \label{neg_ssub}
+    \lean{neg_ssub}
+    \leanok
+    \uses{Ssub, neg_sub, sub_smaller}
+    If $\neg g$ is a proper subformula of $f$, then $g$ is a proper subformula of $f$.
+\end{lemma}
+
+\begin{lemma}
+    \label{imp_ssub}
+    \lean{imp_ssub}
+    \leanok
+    \uses{Ssub, imp_sub, sub_smaller}
+    If $(g_1 \to g_2)$ is a proper subformula of $f$, then both $g_1$ and $g_2$ are proper subformulas of $f$.
+\end{lemma}
+
+\section{Tseitin Equivalence}
+
+\begin{lemma}
+    \label{eval_not}
+    \lean{eval_not}
+    \leanok
+    \uses{T, N_sub_subset_Ns, Satisfies.iff, Satisfies.bigAnd}
+    If $f$ is non-atomic and $w \models T(f)$, then for every $g$ such that $\neg g$ is a subformula of $f$, we have
+    \[
+    w(V_{\neg g}) = \neg \, w(V_g).
+    \]
+\end{lemma}
+\begin{proof}
+    \leanok
+    The clause $V_{\neg g} \leftrightarrow \neg V_g$ is in $N(\neg g)$, hence it is in $N^*(f)$.
+    Since $w \models T(f)$, $w \models g$, for all clauses $g$ in the conjuction $T(f) = \bigwedge N^*(f)$.
+    Therefore $w \models V_{\neg g} \leftrightarrow \neg V_g$ which by \ref{Satisfies.iff} is the equality we are looking for.
+\end{proof}
+
+\begin{lemma}
+    \label{eval_imp}
+    \lean{eval_imp}
+    \leanok
+    \uses{T, N_sub_subset_Ns, Satisfies.iff, Satisfies.bigAnd}
+    If $f$ is non-atomic and $w \models T(f)$, then for every $g_1, g_2$ such that $(g_1 \to g_2)$ is a subformula of $f$, we have
+    \[
+    w(V_{(g_1 \to g_2)}) = (\neg w(V_{g_1}) \;\lor\; w(V_{g_2})).
+    \]
+\end{lemma}
+\begin{proof}
+    \leanok
+    As with \ref{eval_not}, the clause $V_{(g_1 \to g_2)} \leftrightarrow (V_{g_1} \to V_{g_2})$ lies in $N^*(f)$, and is therefore satisfied by $w$.
+\end{proof}
+
+\begin{theorem}
+    \label{eval_eq_of_mem_ssub}
+    \lean{eval_eq_of_mem_ssub}
+    \leanok
+    \uses{Atoms, mem_atoms_of_subformula, neg_ssub, imp_ssub, eval_not, eval_imp}
+    Let $f$ be non-atomic such that $w \models T(f)$.
+    If $v$ and $w$ agree on all atomic variables of $f$, then for every proper subformula $g$ of $f$ we have
+    \[
+    w(V_g) = v[g].
+    \]
+\end{theorem}
+\begin{proof}
+    \leanok
+    By induction on $g$.
+    \begin{itemize}
+        \item \emph{Case $g=\Atom(n)$:} follows from hypothesis that $v$ and $w$ agree on atoms.  
+        \item \emph{Case $g=\neg h$:} use \ref{eval_not} and the induction hypothesis on $h$ with \ref{neg_ssub}.  
+        \item \emph{Case $g=(g_1 \to g_2)$:} use \ref{eval_imp} and the induction hypotheses on $g_1,g_2$ with \ref{imp_ssub}.
+    \end{itemize}
+\end{proof}

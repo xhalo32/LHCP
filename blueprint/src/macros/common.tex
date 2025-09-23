@@ -1,0 +1,63 @@
+% In this file you should put all LaTeX macros to be used
+% both by the pdf version and the web version.
+% This should be most of your macros.
+
+\newtheorem{theorem}{Theorem}[chapter]
+%\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{sublemma}[theorem]{Sub-lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\re}{\Re\mathfrak{e}}
+\newcommand{\im}{\Im\mathfrak{m}}
+
+\newcommand{\ud}{\mathrm{d}}
+
+\newcommand{\bN}{\mathbb{N}}
+\newcommand{\N}{\bN}
+\newcommand{\bZ}{\mathbb{Z}}
+\newcommand{\Z}{\bZ}
+\newcommand{\bQ}{\mathbb{Q}}
+\newcommand{\Q}{\bQ}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\R}{\bR}
+\newcommand{\bC}{\mathbb{C}}
+\newcommand{\C}{\bC}
+
+
+\newcommand{\Formula}{\mathsf{Formula}}
+\newcommand{\Valuation}{\mathsf{Valuation}}
+\newcommand{\Bool}{\mathsf{Bool}}
+\newcommand{\Atoms}{\mathsf{Atoms}}
+\newcommand{\Sub}{\mathsf{Sub}}
+\newcommand{\Ssub}{\mathsf{Ssub}}
+
+% Constructors
+\newcommand{\Atom}{\mathsf{Atom}}
+\newcommand{\Neg}{\mathsf{Neg}}
+\newcommand{\Imp}{\mathsf{Imp}}
+\newcommand{\iff}{\leftrightarrow}
+\newcommand{\BigAnd}{\bigwedge}
+
+
+% Semantic notions
+\newcommand{\eval}{\mathsf{eval}}
+\newcommand{\Satisfies}[2]{#1 \models #2}
+\newcommand{\Satisfiable}[1]{#1 \ \mathsf{sat}}
+\newcommand{\sat}{\ \mathsf{sat}}
+
+% Boolean
+\newcommand{\true}{\mathsf{true}}
+\newcommand{\false}{\mathsf{false}}
+\newcommand{\ite}[3]{\textbf{if}\ #1\ \textbf{then}\ #2\ \textbf{else}\ #3}
