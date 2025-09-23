@@ -149,21 +149,21 @@ lemma mem_atoms_of_subformula {m g} (h : Atom m ∈ Sub g) : m ∈ Atoms g := by
       right
       exact f2_ih
 
-@[simp] lemma BigAnd.append {f g : List Formula} (hf : f ≠ []) (hg : g ≠ []) : (⋀ f ++ g) (List.append_ne_nil_of_left_ne_nil hf g) = (⋀ f) hf ∧ (⋀ g) hg := by
-  sorry
-
 @[simp] lemma BigAnd.cons {f} {fs : List Formula} (hf : fs ≠ []) :
   (⋀ f :: fs) (List.cons_ne_nil f fs) = f ∧ (⋀ fs) hf := by
-  sorry
+  cases fs with
+  | nil => contradiction
+  | cons head tail =>
+    rfl
 
-@[simp] lemma BigAnd.single {f : Formula} (hf) : (⋀ [f]) hf = f := by
-  sorry
+@[simp] lemma BigAnd.single {f : Formula} (hf) : (⋀ [f]) hf = f := rfl
 
 @[simp] lemma Satisfies.and {w f g} : (w ⊨ f ∧ g) ↔ (w ⊨ f) ∧ w ⊨ g := by
-  sorry
+  simp [Satisfies, Formula.And, eval]
 
 @[simp] lemma Satisfies.iff {w f g} : (w ⊨ f ↔ g) ↔ ((w ⊨ f) ↔ w ⊨ g) := by
-  sorry
+  simp [Satisfies, Formula.Iff, eval]
+  grind
 
 @[simp] lemma Satisfies.bigAnd {w : Valuation} {l : List Formula} (hl : l ≠ []) : (w ⊨ (⋀ l) hl) ↔ ∀ g ∈ l, w ⊨ g := by
   induction l with
@@ -177,6 +177,18 @@ lemma mem_atoms_of_subformula {m g} (h : Atom m ∈ Sub g) : m ∈ Atoms g := by
       rw [Satisfies.and]
       rw [ih]
       simp
+
+@[simp] lemma Satisfies.bigAnd_append {w} {f g : List Formula} (hf : f ≠ []) (hg : g ≠ []) : (w ⊨ (⋀ f ++ g) (List.append_ne_nil_of_left_ne_nil hf g)) ↔ w ⊨ (⋀ f) hf ∧ (⋀ g) hg := by
+  induction f with
+  | nil => contradiction
+  | cons head tail ih =>
+    by_cases htail : tail = []
+    · subst htail
+      simp [hg]
+    · have : tail ++ g ≠ []
+      · grind
+      simp [BigAnd.cons, this, htail]
+      grind
 
 #check Set.iUnion_accumulate
 #check Set.subset_accumulate
@@ -398,6 +410,8 @@ theorem eval_eq_of_mem_ssub {f} {v w : Valuation} (hf : NonAtomic f) (hw : w ⊨
     specialize f1_ih (imp_ssub hg).1
     specialize f2_ih (imp_ssub hg).2
     simp [f1_ih, f2_ih, eval]
+
+#printaxioms eval_eq_of_mem_ssub
 
 -- "Tseitin's theorem"
 theorem sat_iff {f} (hf : NonAtomic f) : f sat. ↔ E f sat. := by
