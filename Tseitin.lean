@@ -148,33 +148,161 @@ lemma mem_atoms_of_subformula {m g} (h : Atom m ∈ Sub g) : m ∈ Atoms g := by
       right
       exact f2_ih
 
-lemma BigAnd.append {f g : List Formula} (hf : f ≠ []) (hg : g ≠ []) : (⋀ f ++ g) (by grind) = (⋀ f) hf ∧ (⋀ g) hg := by
+@[simp] lemma BigAnd.append {f g : List Formula} (hf : f ≠ []) (hg : g ≠ []) : (⋀ f ++ g) (by grind) = (⋀ f) hf ∧ (⋀ g) hg := by
+  sorry
+
+@[simp] lemma BigAnd.cons {f} {fs : List Formula} (hf : fs ≠ []) :
+  (⋀ f :: fs) (by grind) = f ∧ (⋀ fs) hf := by
   sorry
 
 @[simp] lemma BigAnd.single {f : Formula} (hf) : (⋀ [f]) hf = f := by
+  sorry
+
+@[simp] lemma Satisfies.and {w f g} : (w ⊨ f ∧ g) ↔ (w ⊨ f) ∧ w ⊨ g := by
+  sorry
+
+@[simp] lemma Satisfies.iff {w f g} : (w ⊨ f ↔ g) ↔ ((w ⊨ f) ↔ w ⊨ g) := by
   sorry
 
 #check Set.iUnion_accumulate
 #check Set.subset_accumulate
 #check Set.subset_iUnion
 
-lemma Ns_eq_empty_iff {f : Formula} : (Ns f = []) ↔ ¬ NonAtomic f := by
+@[grind] lemma Ns_eq_empty_iff {f : Formula} : (Ns f = []) ↔ ¬ NonAtomic f := by
   simp [NonAtomic]
   split
   · simp [Ns]
   · cases f <;> simp_all [Ns, N]
 
+@[grind] lemma not_nonAtomic {f} : (¬ NonAtomic f) ↔ ∃ n, f = Atom n := by
+  simp_all [NonAtomic]
+  split <;> grind
+
 lemma neg_sub {g f : Formula} (h : (¬g) ∈ Sub f) : g ∈ Sub f := by
   sorry
+
+lemma sub_neg {g f : Formula} (h : g ∈ Sub f) : g ∈ Sub (¬ f) := by
+  simp_all [Sub]
 
 lemma eval_not {v w : Valuation} {f} (hf : NonAtomic f) (hw : w ⊨ T f hf)
   (h : ∀ n ∈ Atoms f, v n = w.eval (V (Atom n))) : ∀ g ∈ Sub f, w.eval (V (¬g)) = ! w.eval (V g) := by
   intro g hg
+
+  cases f with
+  | Atom n =>
+    simp [T, Ns] at hw
+    nomatch hw
+  | Neg f =>
+    simp [T, Ns] at hw
+    by_cases hf : NonAtomic f
+    ·
+      have : w ⊨ T f hf
+      · sorry
+      apply eval_not hf this h
+      sorry
+    · sorry
+  | Imp f1 f2 =>
+    simp [T, Ns] at hw
+    simp [Sub] at hg
+    rcases hg with (hg | hg) | hg
+    · sorry
+    · by_cases hf : NonAtomic f1
+      · have : w ⊨ T f1 hf
+        · sorry
+        simp [Atoms] at h
+        have h' : ∀ n, (n ∈ Atoms f1) → v n = w.eval (V (Atom n))
+        · intro n hn
+          apply h
+          left
+          exact hn
+
+        apply eval_not hf this h' _ hg
+      · sorry
+    · by_cases hf : NonAtomic f2
+      · have : w ⊨ T f2 hf
+        · sorry
+        simp [Atoms] at h
+        have h' : ∀ n, (n ∈ Atoms f2) → v n = w.eval (V (Atom n))
+        · intro n hn
+          apply h
+          right
+          exact hn
+
+        apply eval_not hf this h' _ hg
+      · sorry
+
+
+  --   ·
+  --     simp [hNs, N] at hw
+  --     simp only [Satisfies, Bool.coe_iff_coe] at hw
+  --     rw [hw]
+  --     rw [Ns_eq_empty_iff, not_nonAtomic] at hNs
+
+  --     cases hNs
+  --     subst f
+  --     simp [Sub] at hg
+  --     cases hg
+  --     · subst g
+  --       rw [← h _ sorry]
+
+lemma eval_not' {v w : Valuation} {f} (hf : NonAtomic f) (hw : w ⊨ T f hf)
+  (h : ∀ n ∈ Atoms f, v n = w.eval (V (Atom n))) : ∀ g ∈ Sub f, w.eval (V (¬g)) = ! w.eval (V g) := by
+  intro g hg
   induction g with
   | Atom n =>
-    have := h n sorry
-    rw [← this]
-    sorry
+    specialize h n sorry
+    rw [← h]
+    simp [T] at hw
+
+    induction f with
+    | Atom n =>
+      nomatch hw
+    | Neg f ih =>
+      simp [Ns] at hw
+      by_cases hNs : Ns f = []
+      · simp_all
+        rw [Ns_eq_empty_iff] at hNs
+        rw [not_nonAtomic] at hNs
+        cases hNs
+        subst f
+        simp [Sub] at hg
+        subst n
+        simp [N] at hw
+        simp [Satisfies] at hw
+        simp [hw, eval]
+      ·
+        apply ih
+        · simp [N] at hw
+          rw [BigAnd.cons hNs] at hw
+          rw [Satisfies.and] at hw
+          exact hw.2
+        · simp [Sub] at hg
+          exact hg
+        · grind
+    | Imp f1 f2 f1_ih f2_ih =>
+      simp [Ns, N] at hw
+      by_cases hNs : (Ns f1 = []) ∧ Ns f2 = []
+      · simp_all
+        simp [Ns_eq_empty_iff, not_nonAtomic] at hNs
+        obtain ⟨⟨n, hn⟩, ⟨m, hm⟩⟩ := hNs
+        subst f1 f2
+        simp [Sub] at hg
+        cases hg
+        · subst m
+          simp [N] at hw
+          simp [Satisfies] at hw
+          simp [eval] at hw
+      ·
+        apply ih
+        · simp [N] at hw
+          rw [BigAnd.cons hNs] at hw
+          rw [Satisfies.and] at hw
+          exact hw.2
+        · simp [Sub] at hg
+          exact hg
+        · grind
+
+      -- · simp_all
     -- contradiction
   | Neg g ih' =>
     specialize ih' ?_
