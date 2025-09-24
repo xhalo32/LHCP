@@ -72,9 +72,6 @@ def NonAtomic (f : Formula) := match f with
 @[simp] lemma NonAtomic.imp (f1 f2 : Formula) : NonAtomic $ f1 → f2 := by
   simp_all [NonAtomic]
 
-
-#check countable_iff_exists_injective
-
 lemma Formula.existsChooseFn : ∃ F : Formula → ℕ, F.Injective := by
   rw [← countable_iff_exists_injective]
   exact inferInstance
@@ -408,8 +405,6 @@ theorem eval_eq_of_mem_ssub {f} {v w : Valuation} (hf : NonAtomic f) (hw : w ⊨
     specialize f1_ih (imp_ssub hg).1
     specialize f2_ih (imp_ssub hg).2
     simp [f1_ih, f2_ih, eval]
-
-#printaxioms eval_eq_of_mem_ssub
 
 -- "Tseitin's theorem"
 theorem sat_iff {f} (hf : NonAtomic f) : f sat. ↔ E f sat. := by
