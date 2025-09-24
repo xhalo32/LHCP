@@ -1,4 +1,7 @@
-import Mathlib.Tactic
+import Mathlib.Tactic.Have
+import Mathlib.Tactic.ApplyAt
+
+import Mathlib.Tactic.DeriveCountable
 
 namespace LHCP
 
@@ -16,10 +19,9 @@ open Formula
 
 abbrev Valuation := ℕ → Bool
 
-#check Atom
-
-#check ¬ (Atom 2)
-#check (Atom 2) → (Atom 3).Neg
+-- We can use notation like this
+-- #check ¬ (Atom 2)
+-- #check (Atom 2) → (Atom 3).Neg
 
 def Valuation.eval (v : Valuation) (F : Formula) := match F with
   | Atom n => v n
@@ -29,7 +31,7 @@ def Valuation.eval (v : Valuation) (F : Formula) := match F with
 
 open Valuation
 
-#eval eval (fun x => x % 2 == 0) $ (Atom 1).Imp (Atom 4)
+-- #eval eval (fun x => x % 2 == 0) $ (Atom 1).Imp (Atom 4)
 
 abbrev Satisfies (v) (F) := eval v F = true
 
@@ -39,7 +41,7 @@ abbrev Satisfiable (F : Formula) := ∃ v, v ⊨ F
 
 notation F "sat." => Satisfiable F
 
-#check (Atom 2) sat.
+-- #check (Atom 2) sat.
 
 example : ((Atom 1) → ¬ (Atom 4)) sat. := by
   use (fun x => x % 2 == 0)
@@ -190,22 +192,13 @@ lemma mem_atoms_of_subformula {m g} (h : Atom m ∈ Sub g) : m ∈ Atoms g := by
       simp [BigAnd.cons, this, htail]
       grind
 
-#check Set.iUnion_accumulate
-#check Set.subset_accumulate
-#check Set.subset_iUnion
-
 @[grind] lemma Ns_eq_empty_iff {f : Formula} : (Ns f = []) ↔ ¬ NonAtomic f := by
   simp [NonAtomic]
   split
   · simp [Ns]
   · cases f <;> simp_all [Ns, N]
 
-@[grind] lemma not_nonAtomic {f} : (¬ NonAtomic f) ↔ ∃ n, f = Atom n := by
-  simp_all [NonAtomic]
-  split <;> grind
-
-lemma N_sub_subset_Ns {f s : Formula} (hs : s ∈ Sub f) :
-  ∀ cl, (cl ∈ N s) → cl ∈ Ns f := by
+lemma N_sub_subset_Ns {f s : Formula} (hs : s ∈ Sub f) : N s ⊆ Ns f := by
   induction f with
   | Atom n =>
     simp [Sub] at hs
@@ -220,7 +213,7 @@ lemma N_sub_subset_Ns {f s : Formula} (hs : s ∈ Sub f) :
     | inr hsub =>
       intros cl hc
       apply List.mem_append_right
-      exact ih hsub cl hc
+      exact ih hsub hc
   | Imp f1 f2 ih1 ih2 =>
     simp only [Sub, Ns] at hs ⊢
     cases hs with
@@ -229,6 +222,10 @@ lemma N_sub_subset_Ns {f s : Formula} (hs : s ∈ Sub f) :
       cases h <;> simp_all
     | inr h =>
       simp_all
+
+@[grind] lemma not_nonAtomic {f} : (¬ NonAtomic f) ↔ ∃ n, f = Atom n := by
+  simp_all [NonAtomic]
+  split <;> grind
 
 @[simp, grind] lemma sub_self {f : Formula} : f ∈ Sub f := by
   cases f <;> simp [Sub]
@@ -363,6 +360,7 @@ lemma imp_ssub {g1 g2 f : Formula} (h : (g1 → g2) ∈ Ssub f) : (g1 ∈ Ssub f
       apply sub_smaller at h1
       contrapose h1
       simp
+      omega
 
 lemma eval_not {w f} (hf : NonAtomic f) (hw : w ⊨ T f hf) : ∀ g, (g.Neg ∈ Sub f) → w.eval (V (¬g)) = ! w.eval (V g) := by
   intro g hg
@@ -370,7 +368,7 @@ lemma eval_not {w f} (hf : NonAtomic f) (hw : w ⊨ T f hf) : ∀ g, (g.Neg ∈ 
   have hclause : (V (¬ g) ↔ ¬ V (g)) ∈ N (¬ g) := by
     simp [N]
 
-  have hclause_in_Ns := N_sub_subset_Ns hg _ hclause
+  have hclause_in_Ns := N_sub_subset_Ns hg hclause
 
   simp [T] at hw
   specialize hw _ hclause_in_Ns
@@ -384,7 +382,7 @@ lemma eval_imp {w f} (hf : NonAtomic f) (hw : w ⊨ T f hf) : ∀ g1 g2 : Formul
   have hclause : (V (g1 → g2) ↔ (V g1 → V g2)) ∈ N (g1 → g2) := by
     simp [N]
 
-  have hclause_in_Ns := N_sub_subset_Ns hg _ hclause
+  have hclause_in_Ns := N_sub_subset_Ns hg hclause
 
   simp [T] at hw
   specialize hw _ hclause_in_Ns

@@ -72,7 +72,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.6</span></div>
+      <span class="definition_thmlabel">1.9</span></div>
     <div class="thm_thmcontent"><p>   For formulas \(A\) and \(B\), the conjunction \(A \wedge B\) is defined as </p>
 <div class="displaymath" id="a0000000007">
   \[  A \wedge B := \neg (A \to \neg B).  \]
@@ -105,9 +105,9 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.18</span></div>
+      <span class="definition_thmlabel">1.21</span></div>
     <div class="thm_thmcontent"><p>   For a formula \(f\), define \(\mathsf{Atoms}(f)\) to be the (finite) set of indices of all atomic subformulas of \(f\). It is defined recursively as: </p>
-<div class="displaymath" id="a0000000020">
+<div class="displaymath" id="a0000000021">
   \[  \begin{aligned}  \mathsf{Atoms}(\mathsf{Atom}(n)) & := \{ n\}  \\ \mathsf{Atoms}(\neg g) & := \mathsf{Atoms}(g) \\ \mathsf{Atoms}(g \to h) & := \mathsf{Atoms}(g) \cup \mathsf{Atoms}(h) \\ \end{aligned}  \]
 </div>
 </div>
@@ -138,7 +138,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.8</span></div>
+      <span class="definition_thmlabel">1.11</span></div>
     <div class="thm_thmcontent"><p>   Let \(l\) be a nonempty list of formulas of length \(n\). We define </p>
 <div class="displaymath" id="a0000000009">
   \[  \bigwedge l := l[0] \land l[1] \land ... \land l[n - 1]  \]
@@ -149,39 +149,6 @@
     
     
   <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Formula.BigAnd">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="BigAnd.append_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="BigAnd.append" style="display: none">
-    <div class="thm_thmheading">
-      <span class="lemma_thmcaption">
-      Lemma
-      </span>
-      <span class="lemma_thmlabel">1.21</span></div>
-    <div class="thm_thmcontent"><p>   For nonempty lists of formulas \(f, g\): </p>
-<div class="displaymath" id="a0000000025">
-  \[  \bigwedge (f \cup g) = \left(\bigwedge f\right) \wedge \left(\bigwedge g\right).  \]
-</div>
-</div>
-
-    <a class="latex_link" href="sect0001.html#BigAnd.append">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.BigAnd.append">Lean</a>
     
     
   
@@ -204,9 +171,9 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.22</span></div>
+      <span class="lemma_thmlabel">1.24</span></div>
     <div class="thm_thmcontent"><p>   For a formula \(f\) and a nonempty list of formulas \(fs\): </p>
-<div class="displaymath" id="a0000000027">
+<div class="displaymath" id="a0000000026">
   \[  \bigwedge (f :: fs) = f \wedge \bigwedge fs.  \]
 </div>
 </div>
@@ -214,7 +181,7 @@
     <a class="latex_link" href="sect0001.html#BigAnd.cons">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.BigAnd.cons">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.BigAnd.cons">Lean</a>
     
     
   
@@ -237,9 +204,9 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.23</span></div>
+      <span class="lemma_thmlabel">1.25</span></div>
     <div class="thm_thmcontent"><p>   For a single-element list: </p>
-<div class="displaymath" id="a0000000029">
+<div class="displaymath" id="a0000000028">
   \[  \bigwedge [f] = f.  \]
 </div>
 </div>
@@ -247,7 +214,40 @@
     <a class="latex_link" href="sect0001.html#BigAnd.single">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.BigAnd.single">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.BigAnd.single">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="E_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="E" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.20</span></div>
+    <div class="thm_thmcontent"><p>   Let \(f\) be a formula. The <em>Tseitin encoding</em> \(E(f)\) is \(T(f) \land V_f\) unless \(f\) is atomic, in which case it’s just \(V_f\). </p>
+<div class="displaymath" id="a0000000019">
+  \[  E(f) := \begin{cases}  V_f &  f = \mathsf{Atom}(n) \\ T(f) \wedge V_f &  \text{otherwise}\\ \end{cases}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#E">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.E">Lean</a>
     
     
   
@@ -270,9 +270,9 @@
       <span class="theorem_thmcaption">
       Theorem
       </span>
-      <span class="theorem_thmlabel">1.40</span></div>
+      <span class="theorem_thmlabel">1.43</span></div>
     <div class="thm_thmcontent"><p>   Let \(f\) be non-atomic such that \(w \models T(f)\). If \(v\) and \(w\) agree on all atomic variables of \(f\), then for every proper subformula \(g\) of \(f\) we have </p>
-<div class="displaymath" id="a0000000040">
+<div class="displaymath" id="a0000000052">
   \[  w(V_g) = v[g].  \]
 </div>
 </div>
@@ -280,7 +280,7 @@
     <a class="latex_link" href="sect0001.html#eval_eq_of_mem_ssub">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/eval_eq_of_mem_ssub">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.eval_eq_of_mem_ssub">Lean</a>
     
     
   
@@ -303,9 +303,9 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.39</span></div>
+      <span class="lemma_thmlabel">1.42</span></div>
     <div class="thm_thmcontent"><p>   If \(f\) is non-atomic and \(w \models T(f)\), then for every \(g_1, g_2\) such that \((g_1 \to g_2)\) is a subformula of \(f\), we have </p>
-<div class="displaymath" id="a0000000038">
+<div class="displaymath" id="a0000000050">
   \[  w(V_{(g_1 \to g_2)}) = (\neg w(V_{g_1}) \; \lor \;  w(V_{g_2})).  \]
 </div>
 </div>
@@ -313,7 +313,7 @@
     <a class="latex_link" href="sect0001.html#eval_imp">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/eval_imp">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.eval_imp">Lean</a>
     
     
   
@@ -336,9 +336,9 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.38</span></div>
+      <span class="lemma_thmlabel">1.41</span></div>
     <div class="thm_thmcontent"><p>   If \(f\) is non-atomic and \(w \models T(f)\), then for every \(g\) such that \(\neg g\) is a subformula of \(f\), we have </p>
-<div class="displaymath" id="a0000000036">
+<div class="displaymath" id="a0000000048">
   \[  w(V_{\neg g}) = \neg \,  w(V_g).  \]
 </div>
 </div>
@@ -346,7 +346,7 @@
     <a class="latex_link" href="sect0001.html#eval_not">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/eval_not">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.eval_not">Lean</a>
     
     
   
@@ -407,7 +407,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.12</span></div>
+      <span class="lemma_thmlabel">1.15</span></div>
     <div class="thm_thmcontent"><p>   There exists an injection \(\mathsf{Formula}\to \mathbb {N}\). </p>
 </div>
 
@@ -437,7 +437,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.7</span></div>
+      <span class="definition_thmlabel">1.10</span></div>
     <div class="thm_thmcontent"><p>   For formulas \(A\) and \(B\), the biconditional \(A \leftrightarrow B\) is defined as </p>
 <div class="displaymath" id="a0000000008">
   \[  A \leftrightarrow B := (A \to B) \wedge (B \to A).  \]
@@ -470,14 +470,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.37</span></div>
+      <span class="lemma_thmlabel">1.40</span></div>
     <div class="thm_thmcontent"><p>   If \((g_1 \to g_2)\) is a proper subformula of \(f\), then both \(g_1\) and \(g_2\) are proper subformulas of \(f\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#imp_ssub">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/imp_ssub">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.imp_ssub">Lean</a>
     
     
   
@@ -500,14 +500,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.33</span></div>
+      <span class="lemma_thmlabel">1.36</span></div>
     <div class="thm_thmcontent"><p>   If \((g_1 \to g_2)\) is a subformula of \(f\), then both \(g_1\) and \(g_2\) are also subformulas of \(f\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#imp_sub">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/imp_sub">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.imp_sub">Lean</a>
     
     
   
@@ -530,7 +530,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.20</span></div>
+      <span class="lemma_thmlabel">1.23</span></div>
     <div class="thm_thmcontent"><p>   If an atom is a subformula of \(g\), it’s index is in \(\mathsf{Atoms}(g)\). </p>
 </div>
 
@@ -538,6 +538,69 @@
     
     
   <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.mem_atoms_of_subformula">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="N_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="N" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.17</span></div>
+    <div class="thm_thmcontent"><p>   For a formula \(f\), \(N(f)\) is the list of formulas </p>
+<div class="displaymath" id="a0000000016">
+  \[  N(f) := \begin{cases}  [\  ] &  f = \mathsf{Atom}(n) \\ \left[ V_f \leftrightarrow \neg V_g \right] &  f = \neg g \\ \left[ V_f \leftrightarrow (V_g \to V_h) \right] &  f = g \to h \end{cases}  \]
+</div>
+</div>
+
+    <a class="latex_link" href="sect0001.html#N">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.N">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="N_sub_subset_Ns_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="N_sub_subset_Ns" style="display: none">
+    <div class="thm_thmheading">
+      <span class="lemma_thmcaption">
+      Lemma
+      </span>
+      <span class="lemma_thmlabel">1.30</span></div>
+    <div class="thm_thmcontent"><p>   If \(s\) is a subformula of \(f\), then \(N(s) \subseteq N^*(f)\). </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#N_sub_subset_Ns">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.N_sub_subset_Ns">Lean</a>
     
     
   
@@ -560,14 +623,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.36</span></div>
+      <span class="lemma_thmlabel">1.39</span></div>
     <div class="thm_thmcontent"><p>   If \(\neg g\) is a proper subformula of \(f\), then \(g\) is a proper subformula of \(f\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#neg_ssub">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/neg_ssub">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.neg_ssub">Lean</a>
     
     
   
@@ -590,14 +653,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.32</span></div>
+      <span class="lemma_thmlabel">1.35</span></div>
     <div class="thm_thmcontent"><p>   If \(\neg g\) is a subformula of \(f\), then \(g\) is a subformula of \(f\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#neg_sub">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.neg_sub">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.neg_sub">Lean</a>
     
     
   
@@ -620,7 +683,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.9</span></div>
+      <span class="definition_thmlabel">1.12</span></div>
     <div class="thm_thmcontent"><p>   A formula \(f\) is called <em>non-atomic</em>, if it is not of the form \(\mathsf{Atom}{n}\). </p>
 </div>
 
@@ -650,7 +713,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.11</span></div>
+      <span class="lemma_thmlabel">1.14</span></div>
     <div class="thm_thmcontent"><p>   For any formulas \(f_1, f_2\), \((f_1 \to f_2)\) is non-atomic. </p>
 </div>
 
@@ -680,7 +743,7 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.10</span></div>
+      <span class="lemma_thmlabel">1.13</span></div>
     <div class="thm_thmcontent"><p>   For any formula \(f\), \(\neg f\) is non-atomic. </p>
 </div>
 
@@ -710,14 +773,48 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.28</span></div>
+      <span class="lemma_thmlabel">1.31</span></div>
     <div class="thm_thmcontent"><p>   For any formula \(f\), \(f\) is atomic iff there is some \(n\) s.t. \(f = \mathsf{Atom}(n)\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#not_nonAtomic">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.not_nonAtomic">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.not_nonAtomic">Lean</a>
+    
+    
+  
+    
+  </div>
+    
+      </div>
+    </div>
+
+
+    
+    <div class="dep-modal-container" id="Ns_modal">
+      <div class="dep-modal-content">
+          <button class="dep-closebtn">
+<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        
+  <div class="thm" id="Ns" style="display: none">
+    <div class="thm_thmheading">
+      <span class="definition_thmcaption">
+      Definition
+      </span>
+      <span class="definition_thmlabel">1.18</span></div>
+    <div class="thm_thmcontent"><p>   For a formula \(f\), \(N^*(f)\) is the list of all \(N(g)\) of all subformulas \(g\) of \(f\). </p>
+<div class="displaymath" id="a0000000017">
+  \[  N^*(f) := \begin{cases}  [\  ] &  f = \mathsf{Atom}(n) \\ N(f) \cup N^*(g) &  f = \neg g \\ N(f) \cup N^*(f_1) \cup N^*(f_2) &  f = f_1 \to f_2 \end{cases}  \]
+</div>
+<p> where \(\cup \) denotes list concatenation. </p>
+</div>
+
+    <a class="latex_link" href="sect0001.html#Ns">LaTeX</a>
+    
+    
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Ns">Lean</a>
     
     
   
@@ -740,14 +837,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.27</span></div>
+      <span class="lemma_thmlabel">1.29</span></div>
     <div class="thm_thmcontent"><p>   For any formula \(f\), \(N^*(f)\) is empty iff \(f\) is atomic. </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#Ns_eq_empty_iff">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Ns_eq_empty_iff">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Ns_eq_empty_iff">Lean</a>
     
     
   
@@ -770,7 +867,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.5</span></div>
+      <span class="definition_thmlabel">1.8</span></div>
     <div class="thm_thmcontent"><p>   A formula \(F\) is <em>satisfiable</em>, written \(F \  \mathsf{sat}\), if there exists a valuation \(v\) such that \(v \models F\). </p>
 </div>
 
@@ -800,7 +897,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.4</span></div>
+      <span class="definition_thmlabel">1.7</span></div>
     <div class="thm_thmcontent"><p>   A valuation \(v\) <em>satisfies</em> a formula \(F\), written \(v \models F\), if \(v.\mathsf{eval}(F) = \mathsf{true}\). </p>
 </div>
 
@@ -830,14 +927,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.24</span></div>
+      <span class="lemma_thmlabel">1.26</span></div>
     <div class="thm_thmcontent"><p>   For any valuation \(w\) and formulas \(f,g\), \(w \models f \wedge g\) iff \(w \models f\) and \(w \models g\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#Satisfies.and">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Satisfies.and">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Satisfies.and">Lean</a>
     
     
   
@@ -860,14 +957,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.26</span></div>
+      <span class="lemma_thmlabel">1.28</span></div>
     <div class="thm_thmcontent"><p>   For any valuation \(w\) and a nonempty list of formulas \(l\), \(w \models \bigwedge l\) iff \(w \models g\) for all \(g \in l\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#Satisfies.bigAnd">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Satisfies.bigAnd">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Satisfies.bigAnd">Lean</a>
     
     
   
@@ -890,14 +987,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.25</span></div>
+      <span class="lemma_thmlabel">1.27</span></div>
     <div class="thm_thmcontent"><p>   For any valuation \(w\) and formulas \(f,g\): \(w \models f \leftrightarrow g\) iff \((w \models f) \Leftrightarrow (w \models g)\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#Satisfies.iff">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Satisfies.iff">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Satisfies.iff">Lean</a>
     
     
   
@@ -920,10 +1017,10 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.34</span><span class="definition_thmtitle">Proper subformula</span></div>
+      <span class="definition_thmlabel">1.37</span><span class="definition_thmtitle">Proper subformula</span></div>
     <div class="thm_thmcontent"><p>    \(g\) is a proper subformula of \(f\) it is a subformula and not equal to \(f\). </p>
 <p>Let \(\mathsf{Ssub}(f)\) denote the set of proper subformulas of \(f\), i.e. </p>
-<div class="displaymath" id="a0000000033">
+<div class="displaymath" id="a0000000042">
   \[  \mathsf{Ssub}(f) := \mathsf{Sub}(f) \setminus \{  f \} .  \]
 </div>
 </div>
@@ -931,7 +1028,7 @@
     <a class="latex_link" href="sect0001.html#Ssub">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/Ssub">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Ssub">Lean</a>
     
     
   
@@ -954,9 +1051,9 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.19</span></div>
+      <span class="definition_thmlabel">1.22</span></div>
     <div class="thm_thmcontent"><p>   For a formula \(f\), define \(\mathsf{Sub}(f)\) to be the (finite) set of subformulas of \(f\). It is defined recursively as: </p>
-<div class="displaymath" id="a0000000021">
+<div class="displaymath" id="a0000000022">
   \[  \begin{align}  \mathsf{Sub}(\mathsf{Atom}(n)) & := \{ \mathsf{Atom}(n)\}  \\ \mathsf{Sub}(\neg g) & := \{ \neg g\}  \cup \mathsf{Sub}(g) \\ \mathsf{Sub}(g \to h) & := \{ g \to h\}  \cup \mathsf{Sub}(g) \cup \mathsf{Sub}(h) \\ \end{align}  \]
 </div>
 </div>
@@ -987,14 +1084,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.31</span></div>
+      <span class="lemma_thmlabel">1.34</span></div>
     <div class="thm_thmcontent"><p>   If \(g\) is a subformula of \(f_1\) or a subformula of \(f_2\), then it is a subformula of \(f_1 \to f_2\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#sub_imp">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.sub_imp">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_imp">Lean</a>
     
     
   
@@ -1017,14 +1114,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.30</span></div>
+      <span class="lemma_thmlabel">1.33</span></div>
     <div class="thm_thmcontent"><p>   If \(g\) is a subformula of \(f\), then \(g\) is a subformula of \(\neg f\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#sub_neg">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.sub_neg">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_neg">Lean</a>
     
     
   
@@ -1047,14 +1144,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.29</span></div>
+      <span class="lemma_thmlabel">1.32</span></div>
     <div class="thm_thmcontent"><p>   \(f\) is a subformula of itself. </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#sub_self">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.sub_self">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_self">Lean</a>
     
     
   
@@ -1077,14 +1174,14 @@
       <span class="lemma_thmcaption">
       Lemma
       </span>
-      <span class="lemma_thmlabel">1.35</span></div>
+      <span class="lemma_thmlabel">1.38</span></div>
     <div class="thm_thmcontent"><p>   If \(g\) is a subformula of \(f\), then \(g\) is at most the size of \(f\). </p>
 </div>
 
     <a class="latex_link" href="sect0001.html#sub_smaller">LaTeX</a>
     
     
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/sub_smaller">Lean</a>
+  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_smaller">Lean</a>
     
     
   
@@ -1096,125 +1193,25 @@
 
 
     
-    <div class="dep-modal-container" id="Tseitin.E_modal">
+    <div class="dep-modal-container" id="T_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
 <svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
 </button>
         
-  <div class="thm" id="Tseitin.E" style="display: none">
+  <div class="thm" id="T" style="display: none">
     <div class="thm_thmheading">
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.17</span></div>
-    <div class="thm_thmcontent"><p>   Let \(f\) be a formula. The <em>Tseitin encoding</em> \(E(f)\) is \(T(f) \land V_f\) unless \(f\) is atomic, in which case it’s just \(V_f\). </p>
-<div class="displaymath" id="a0000000018">
-  \[  E(f) := \begin{cases}  V_f &  f = \mathsf{Atom}(n) \\ T(f) \wedge V_f &  \text{otherwise}\\ \end{cases}  \]
-</div>
-</div>
-
-    <a class="latex_link" href="sect0001.html#Tseitin.E">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.E">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="Tseitin.N_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="Tseitin.N" style="display: none">
-    <div class="thm_thmheading">
-      <span class="definition_thmcaption">
-      Definition
-      </span>
-      <span class="definition_thmlabel">1.14</span></div>
-    <div class="thm_thmcontent"><p>   For a formula \(f\), \(N(f)\) is the list of formulas </p>
-<div class="displaymath" id="a0000000015">
-  \[  N(f) := \begin{cases}  [\  ] &  f = \mathsf{Atom}(n) \\ \left[ V_f \leftrightarrow \neg V_g \right] &  f = \neg g \\ \left[ V_f \leftrightarrow (V_g \to V_h) \right] &  f = g \to h \end{cases}  \]
-</div>
-</div>
-
-    <a class="latex_link" href="sect0001.html#Tseitin.N">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.N">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="Tseitin.Ns_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="Tseitin.Ns" style="display: none">
-    <div class="thm_thmheading">
-      <span class="definition_thmcaption">
-      Definition
-      </span>
-      <span class="definition_thmlabel">1.15</span></div>
-    <div class="thm_thmcontent"><p>   For a formula \(f\), \(N^*(f)\) is the list of all \(N(g)\) of all subformulas \(g\) of \(f\). </p>
-<div class="displaymath" id="a0000000016">
-  \[  N^*(f) := \begin{cases}  [\  ] &  f = \mathsf{Atom}(n) \\ N(f) \cup N^*(g) &  f = \neg g \\ N(f) \cup N^*(f_1) \cup N^*(f_2) &  f = f_1 \to f_2 \end{cases}  \]
-</div>
-<p> where \(\cup \) denotes list concatenation. </p>
-</div>
-
-    <a class="latex_link" href="sect0001.html#Tseitin.Ns">LaTeX</a>
-    
-    
-  <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Ns">Lean</a>
-    
-    
-  
-    
-  </div>
-    
-      </div>
-    </div>
-
-
-    
-    <div class="dep-modal-container" id="Tseitin.T_modal">
-      <div class="dep-modal-content">
-          <button class="dep-closebtn">
-<svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        
-  <div class="thm" id="Tseitin.T" style="display: none">
-    <div class="thm_thmheading">
-      <span class="definition_thmcaption">
-      Definition
-      </span>
-      <span class="definition_thmlabel">1.16</span></div>
+      <span class="definition_thmlabel">1.19</span></div>
     <div class="thm_thmcontent"><p>   Let \(f\) be a non-atomic formula. <em>Tseitin’s T</em> of \(f\) is the conjunction of all \(N(g)\) of all subformulas \(g\) of \(f\). Equivalently, it’s the conjunction of \(N^*(f)\). </p>
-<div class="displaymath" id="a0000000017">
+<div class="displaymath" id="a0000000018">
   \[  T(f) := \bigwedge N^*(f)  \]
 </div>
 </div>
 
-    <a class="latex_link" href="sect0001.html#Tseitin.T">LaTeX</a>
+    <a class="latex_link" href="sect0001.html#T">LaTeX</a>
     
     
   <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.T">Lean</a>
@@ -1229,22 +1226,22 @@
 
 
     
-    <div class="dep-modal-container" id="Tseitin.V_modal">
+    <div class="dep-modal-container" id="V_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
 <svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
 </button>
         
-  <div class="thm" id="Tseitin.V" style="display: none">
+  <div class="thm" id="V" style="display: none">
     <div class="thm_thmheading">
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.13</span></div>
-    <div class="thm_thmcontent"><p>   For each formula \(f\), \(V_f\) is the atom given by the injection in <a href="sect0001.html#Formula.existsChooseFn">1.12</a>. </p>
+      <span class="definition_thmlabel">1.16</span></div>
+    <div class="thm_thmcontent"><p>   For each formula \(f\), \(V_f\) is the atom given by the injection in <a href="sect0001.html#Formula.existsChooseFn">1.15</a>. </p>
 </div>
 
-    <a class="latex_link" href="sect0001.html#Tseitin.V">LaTeX</a>
+    <a class="latex_link" href="sect0001.html#V">LaTeX</a>
     
     
   <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.V">Lean</a>
@@ -1270,7 +1267,7 @@
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.2</span></div>
+      <span class="definition_thmlabel">1.4</span></div>
     <div class="thm_thmcontent"><p>  A <em>valuation</em> is a function \(v : \mathbb {N}\to \mathsf{Bool}\) assigning truth values to atoms. </p>
 </div>
 
@@ -1289,25 +1286,25 @@
 
 
     
-    <div class="dep-modal-container" id="Valuation.eval_notation_modal">
+    <div class="dep-modal-container" id="Valuation.eval_modal">
       <div class="dep-modal-content">
           <button class="dep-closebtn">
 <svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
 </button>
         
-  <div class="thm" id="Valuation.eval_notation" style="display: none">
+  <div class="thm" id="Valuation.eval" style="display: none">
     <div class="thm_thmheading">
       <span class="definition_thmcaption">
       Definition
       </span>
-      <span class="definition_thmlabel">1.3</span></div>
+      <span class="definition_thmlabel">1.5</span></div>
     <div class="thm_thmcontent"><p>   Given a valuation \(v\) and a formula \(f\), the evaluation \(v.\mathsf{eval}(f) : \mathsf{Bool}\) is defined recursively in \(f\) as </p>
 <div class="displaymath" id="a0000000005">
   \[  \begin{aligned}  v.\mathsf{eval}(\mathsf{Atom}(n)) & := v(n), \\ v.\mathsf{eval}(\mathsf{Neg}(f_1)) & := \neg \,  v.\mathsf{eval}(f_1), \\ v.\mathsf{eval}(\mathsf{Imp}(f_1, f_2)) & := \textbf{if}\  v.\mathsf{eval}(f_1) = \mathsf{true}\  \textbf{then}\  v.\mathsf{eval}(f_2)\  \textbf{else}\  \mathsf{true} \end{aligned}  \]
 </div>
 </div>
 
-    <a class="latex_link" href="sect0001.html#Valuation.eval_notation">LaTeX</a>
+    <a class="latex_link" href="sect0001.html#Valuation.eval">LaTeX</a>
     
     
   <a class="lean_link lean_decl" href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Valuation.eval">Lean</a>
@@ -1338,7 +1335,7 @@ graphContainer.graphviz({useWorker: true})
     .width(width)
     .height(height)
     .fit(true)
-    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	sub_imp	[color=green,		label=sub_imp,		shape=ellipse];	imp_sub	[color=green,		label=imp_sub,		shape=ellipse];	imp_ssub	[color=green,		label=imp_ssub,		shape=ellipse];	imp_sub -> imp_ssub	[style=dashed];	eval_eq_of_mem_ssub	[color=green,		fillcolor="#9CEC8B",		label=eval_eq_of_mem_ssub,		shape=ellipse,		style=filled];	imp_ssub -> eval_eq_of_mem_ssub	[style=dashed];	eval_imp	[color=green,		fillcolor="#9CEC8B",		label=eval_imp,		shape=ellipse,		style=filled];	eval_imp -> eval_eq_of_mem_ssub	[style=dashed];	Ssub	[color=green,		fillcolor="#B0ECA3",		label=Ssub,		shape=box,		style=filled];	Ssub -> imp_ssub	[style=dashed];	neg_ssub	[color=green,		label=neg_ssub,		shape=ellipse];	Ssub -> neg_ssub	[style=dashed];	neg_ssub -> eval_eq_of_mem_ssub	[style=dashed];	Sub	[color=green,		fillcolor="#B0ECA3",		label=Sub,		shape=box,		style=filled];	Sub -> sub_imp	[style=dashed];	Sub -> imp_sub	[style=dashed];	Sub -> Ssub	[style=dashed];	mem_atoms_of_subformula	[color=green,		fillcolor="#1CAC78",		label=mem_atoms_of_subformula,		shape=ellipse,		style=filled];	Sub -> mem_atoms_of_subformula	[style=dashed];	sub_neg	[color=green,		label=sub_neg,		shape=ellipse];	Sub -> sub_neg	[style=dashed];	sub_smaller	[color=green,		label=sub_smaller,		shape=ellipse];	Sub -> sub_smaller	[style=dashed];	sub_self	[color=green,		label=sub_self,		shape=ellipse];	Sub -> sub_self	[style=dashed];	mem_atoms_of_subformula -> eval_eq_of_mem_ssub	[style=dashed];	sub_smaller -> imp_ssub	[style=dashed];	sub_smaller -> neg_ssub	[style=dashed];	neg_sub	[color=blue,		label=neg_sub,		shape=ellipse];	sub_self -> neg_sub	[style=dashed];	neg_sub -> neg_ssub	[style=dashed];	BigAnd	[color=green,		fillcolor="#B0ECA3",		label=BigAnd,		shape=box,		style=filled];	"Tseitin.T"	[color=green,		fillcolor="#B0ECA3",		label="Tseitin.T",		shape=box,		style=filled];	BigAnd -> "Tseitin.T"	[style=dashed];	"BigAnd.cons"	[color=blue,		fillcolor="#A3D6FF",		label="BigAnd.cons",		shape=ellipse,		style=filled];	BigAnd -> "BigAnd.cons"	[style=dashed];	"BigAnd.append"	[color=blue,		fillcolor="#A3D6FF",		label="BigAnd.append",		shape=ellipse,		style=filled];	BigAnd -> "BigAnd.append"	[style=dashed];	"BigAnd.single"	[color=blue,		fillcolor="#A3D6FF",		label="BigAnd.single",		shape=ellipse,		style=filled];	BigAnd -> "BigAnd.single"	[style=dashed];	"Tseitin.E"	[color=green,		fillcolor="#B0ECA3",		label="Tseitin.E",		shape=box,		style=filled];	"Tseitin.T" -> "Tseitin.E"	[style=dashed];	NonAtomic	[color=green,		fillcolor="#B0ECA3",		label=NonAtomic,		shape=box,		style=filled];	NonAtomic -> "Tseitin.T"	[style=dashed];	"NonAtomic.neg"	[color=green,		label="NonAtomic.neg",		shape=ellipse];	NonAtomic -> "NonAtomic.neg"	[style=dashed];	Ns_eq_empty_iff	[color=green,		label=Ns_eq_empty_iff,		shape=ellipse];	NonAtomic -> Ns_eq_empty_iff	[style=dashed];	not_nonAtomic	[color=green,		label=not_nonAtomic,		shape=ellipse];	NonAtomic -> not_nonAtomic	[style=dashed];	"NonAtomic.imp"	[color=green,		fillcolor="#1CAC78",		label="NonAtomic.imp",		shape=ellipse,		style=filled];	NonAtomic -> "NonAtomic.imp"	[style=dashed];	"Satisfies.iff"	[color=blue,		label="Satisfies.iff",		shape=ellipse];	"Satisfies.iff" -> eval_imp	[style=dashed];	eval_not	[color=green,		fillcolor="#9CEC8B",		label=eval_not,		shape=ellipse,		style=filled];	"Satisfies.iff" -> eval_not	[style=dashed];	eval_not -> eval_eq_of_mem_ssub	[style=dashed];	"Satisfies.bigAnd"	[color=green,		fillcolor="#1CAC78",		label="Satisfies.bigAnd",		shape=ellipse,		style=filled];	"Satisfies.bigAnd" -> eval_imp	[style=dashed];	"Satisfies.bigAnd" -> eval_not	[style=dashed];	"Tseitin.N"	[color=green,		fillcolor="#B0ECA3",		label="Tseitin.N",		shape=box,		style=filled];	"Tseitin.Ns"	[color=green,		fillcolor="#B0ECA3",		label="Tseitin.Ns",		shape=box,		style=filled];	"Tseitin.N" -> "Tseitin.Ns"	[style=dashed];	"Tseitin.Ns" -> "Tseitin.T"	[style=dashed];	"Tseitin.Ns" -> Ns_eq_empty_iff	[style=dashed];	"Formula.existsChooseFn"	[color=green,		fillcolor="#1CAC78",		label="Formula.existsChooseFn",		shape=ellipse,		style=filled];	"Tseitin.V"	[color=green,		fillcolor="#B0ECA3",		label="Tseitin.V",		shape=box,		style=filled];	"Formula.existsChooseFn" -> "Tseitin.V"	[style=dashed];	"Tseitin.V" -> "Tseitin.N"	[style=dashed];	"Valuation.eval_notation"	[color=green,		fillcolor="#B0ECA3",		label="Valuation.eval_notation",		shape=box,		style=filled];	Satisfies	[color=green,		fillcolor="#B0ECA3",		label=Satisfies,		shape=box,		style=filled];	"Valuation.eval_notation" -> Satisfies	[style=dashed];	Satisfies -> "Satisfies.iff"	[style=dashed];	Satisfies -> "Satisfies.bigAnd"	[style=dashed];	Satisfiable	[color=green,		fillcolor="#B0ECA3",		label=Satisfiable,		shape=box,		style=filled];	Satisfies -> Satisfiable	[style=dashed];	"Satisfies.and"	[color=blue,		label="Satisfies.and",		shape=ellipse];	Satisfies -> "Satisfies.and"	[style=dashed];	Atoms	[color=green,		fillcolor="#B0ECA3",		label=Atoms,		shape=box,		style=filled];	Atoms -> mem_atoms_of_subformula	[style=dashed];	Valuation	[color=green,		fillcolor="#B0ECA3",		label=Valuation,		shape=box,		style=filled];	Valuation -> "Valuation.eval_notation"	[style=dashed];	And	[color=green,		fillcolor="#B0ECA3",		label=And,		shape=box,		style=filled];	And -> BigAnd	[style=dashed];	And -> "Satisfies.bigAnd"	[style=dashed];	And -> "Satisfies.and"	[style=dashed];	Iff	[color=green,		fillcolor="#B0ECA3",		label=Iff,		shape=box,		style=filled];	And -> Iff	[style=dashed];	Iff -> "Satisfies.iff"	[style=dashed];	Formula	[color=green,		fillcolor="#B0ECA3",		label=Formula,		shape=box,		style=filled];	Formula -> Sub	[style=dashed];	Formula -> NonAtomic	[style=dashed];	Formula -> "Formula.existsChooseFn"	[style=dashed];	Formula -> "Valuation.eval_notation"	[style=dashed];	Formula -> Atoms	[style=dashed];	Formula -> And	[style=dashed];}`)
+    .renderDot(`strict digraph "" {	graph [bgcolor=transparent];	node [label="\N",		penwidth=1.8	];	edge [arrowhead=vee];	V	[color=green,		fillcolor="#B0ECA3",		label=V,		shape=box,		style=filled];	N	[color=green,		fillcolor="#B0ECA3",		label=N,		shape=box,		style=filled];	V -> N	[style=dashed];	Ns	[color=green,		fillcolor="#B0ECA3",		label=Ns,		shape=box,		style=filled];	N -> Ns	[style=dashed];	E	[color=green,		fillcolor="#B0ECA3",		label=E,		shape=box,		style=filled];	N_sub_subset_Ns	[color=green,		fillcolor="#1CAC78",		label=N_sub_subset_Ns,		shape=ellipse,		style=filled];	Ns -> N_sub_subset_Ns	[style=dashed];	T	[color=green,		fillcolor="#B0ECA3",		label=T,		shape=box,		style=filled];	Ns -> T	[style=dashed];	Ns_eq_empty_iff	[color=green,		fillcolor="#1CAC78",		label=Ns_eq_empty_iff,		shape=ellipse,		style=filled];	Ns -> Ns_eq_empty_iff	[style=dashed];	eval_imp	[color=green,		fillcolor="#1CAC78",		label=eval_imp,		shape=ellipse,		style=filled];	N_sub_subset_Ns -> eval_imp	[style=dashed];	eval_not	[color=green,		fillcolor="#1CAC78",		label=eval_not,		shape=ellipse,		style=filled];	N_sub_subset_Ns -> eval_not	[style=dashed];	eval_eq_of_mem_ssub	[color=green,		fillcolor="#1CAC78",		label=eval_eq_of_mem_ssub,		shape=ellipse,		style=filled];	eval_imp -> eval_eq_of_mem_ssub	[style=dashed];	eval_not -> eval_eq_of_mem_ssub	[style=dashed];	sub_imp	[color=green,		fillcolor="#1CAC78",		label=sub_imp,		shape=ellipse,		style=filled];	Iff	[color=green,		fillcolor="#B0ECA3",		label=Iff,		shape=box,		style=filled];	"Satisfies.iff"	[color=green,		fillcolor="#1CAC78",		label="Satisfies.iff",		shape=ellipse,		style=filled];	Iff -> "Satisfies.iff"	[style=dashed];	"Satisfies.iff" -> eval_imp	[style=dashed];	"Satisfies.iff" -> eval_not	[style=dashed];	NonAtomic	[color=green,		fillcolor="#B0ECA3",		label=NonAtomic,		shape=box,		style=filled];	NonAtomic -> T	[style=dashed];	NonAtomic -> Ns_eq_empty_iff	[style=dashed];	not_nonAtomic	[color=green,		fillcolor="#1CAC78",		label=not_nonAtomic,		shape=ellipse,		style=filled];	NonAtomic -> not_nonAtomic	[style=dashed];	"NonAtomic.imp"	[color=green,		fillcolor="#1CAC78",		label="NonAtomic.imp",		shape=ellipse,		style=filled];	NonAtomic -> "NonAtomic.imp"	[style=dashed];	"NonAtomic.neg"	[color=green,		fillcolor="#1CAC78",		label="NonAtomic.neg",		shape=ellipse,		style=filled];	NonAtomic -> "NonAtomic.neg"	[style=dashed];	T -> E	[style=dashed];	T -> eval_imp	[style=dashed];	T -> eval_not	[style=dashed];	Sub	[color=green,		fillcolor="#B0ECA3",		label=Sub,		shape=box,		style=filled];	Sub -> N_sub_subset_Ns	[style=dashed];	Sub -> sub_imp	[style=dashed];	sub_self	[color=green,		fillcolor="#1CAC78",		label=sub_self,		shape=ellipse,		style=filled];	Sub -> sub_self	[style=dashed];	imp_sub	[color=green,		fillcolor="#1CAC78",		label=imp_sub,		shape=ellipse,		style=filled];	Sub -> imp_sub	[style=dashed];	sub_neg	[color=green,		fillcolor="#1CAC78",		label=sub_neg,		shape=ellipse,		style=filled];	Sub -> sub_neg	[style=dashed];	Ssub	[color=green,		fillcolor="#B0ECA3",		label=Ssub,		shape=box,		style=filled];	Sub -> Ssub	[style=dashed];	mem_atoms_of_subformula	[color=green,		fillcolor="#1CAC78",		label=mem_atoms_of_subformula,		shape=ellipse,		style=filled];	Sub -> mem_atoms_of_subformula	[style=dashed];	sub_smaller	[color=green,		fillcolor="#1CAC78",		label=sub_smaller,		shape=ellipse,		style=filled];	Sub -> sub_smaller	[style=dashed];	neg_sub	[color=green,		fillcolor="#1CAC78",		label=neg_sub,		shape=ellipse,		style=filled];	sub_self -> neg_sub	[style=dashed];	imp_ssub	[color=green,		fillcolor="#1CAC78",		label=imp_ssub,		shape=ellipse,		style=filled];	imp_sub -> imp_ssub	[style=dashed];	Ssub -> imp_ssub	[style=dashed];	neg_ssub	[color=green,		fillcolor="#1CAC78",		label=neg_ssub,		shape=ellipse,		style=filled];	Ssub -> neg_ssub	[style=dashed];	mem_atoms_of_subformula -> eval_eq_of_mem_ssub	[style=dashed];	sub_smaller -> imp_ssub	[style=dashed];	sub_smaller -> neg_ssub	[style=dashed];	neg_sub -> neg_ssub	[style=dashed];	imp_ssub -> eval_eq_of_mem_ssub	[style=dashed];	neg_ssub -> eval_eq_of_mem_ssub	[style=dashed];	"Formula.existsChooseFn"	[color=green,		fillcolor="#1CAC78",		label="Formula.existsChooseFn",		shape=ellipse,		style=filled];	"Formula.existsChooseFn" -> V	[style=dashed];	"BigAnd.single"	[color=green,		fillcolor="#1CAC78",		label="BigAnd.single",		shape=ellipse,		style=filled];	"Satisfies.and"	[color=green,		fillcolor="#1CAC78",		label="Satisfies.and",		shape=ellipse,		style=filled];	"Valuation.eval"	[color=green,		fillcolor="#B0ECA3",		label="Valuation.eval",		shape=box,		style=filled];	Satisfies	[color=green,		fillcolor="#B0ECA3",		label=Satisfies,		shape=box,		style=filled];	"Valuation.eval" -> Satisfies	[style=dashed];	Satisfies -> "Satisfies.iff"	[style=dashed];	Satisfies -> "Satisfies.and"	[style=dashed];	Satisfiable	[color=green,		fillcolor="#B0ECA3",		label=Satisfiable,		shape=box,		style=filled];	Satisfies -> Satisfiable	[style=dashed];	"Satisfies.bigAnd"	[color=green,		fillcolor="#1CAC78",		label="Satisfies.bigAnd",		shape=ellipse,		style=filled];	Satisfies -> "Satisfies.bigAnd"	[style=dashed];	"Satisfies.bigAnd" -> eval_imp	[style=dashed];	"Satisfies.bigAnd" -> eval_not	[style=dashed];	Valuation	[color=green,		fillcolor="#B0ECA3",		label=Valuation,		shape=box,		style=filled];	Valuation -> "Valuation.eval"	[style=dashed];	And	[color=green,		fillcolor="#B0ECA3",		label=And,		shape=box,		style=filled];	And -> Iff	[style=dashed];	And -> "Satisfies.and"	[style=dashed];	And -> "Satisfies.bigAnd"	[style=dashed];	BigAnd	[color=green,		fillcolor="#B0ECA3",		label=BigAnd,		shape=box,		style=filled];	And -> BigAnd	[style=dashed];	BigAnd -> T	[style=dashed];	BigAnd -> "BigAnd.single"	[style=dashed];	"BigAnd.cons"	[color=green,		fillcolor="#1CAC78",		label="BigAnd.cons",		shape=ellipse,		style=filled];	BigAnd -> "BigAnd.cons"	[style=dashed];	Formula	[color=green,		fillcolor="#B0ECA3",		label=Formula,		shape=box,		style=filled];	Formula -> NonAtomic	[style=dashed];	Formula -> Sub	[style=dashed];	Formula -> "Formula.existsChooseFn"	[style=dashed];	Formula -> "Valuation.eval"	[style=dashed];	Formula -> And	[style=dashed];	Atoms	[color=green,		fillcolor="#B0ECA3",		label=Atoms,		shape=box,		style=filled];	Formula -> Atoms	[style=dashed];	Atoms -> mem_atoms_of_subformula	[style=dashed];}`)
     .on("end", interactive);
 
 latexLabelEscaper = function(label) {

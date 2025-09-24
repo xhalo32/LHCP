@@ -26,7 +26,7 @@ in
   shell = pkgs.mkShell {
     buildInputs = with pkgs; [
       leanblueprint
-      texliveBasic
+      texliveMedium
       elan
       watch-blueprint
 

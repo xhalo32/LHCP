@@ -48,25 +48,25 @@
   <a href="sect0001.html#a0000000010"><span class="toc_ref">1.4</span> <span class="toc_entry">Non-atomic formulas</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000012"><span class="toc_ref">1.5</span> <span class="toc_entry">Injective numbering of formulas</span></a>
+  <a href="sect0001.html#a0000000013"><span class="toc_ref">1.5</span> <span class="toc_entry">Injective numbering of formulas</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000014"><span class="toc_ref">1.6</span> <span class="toc_entry">Tseitin encoding</span></a>
+  <a href="sect0001.html#a0000000015"><span class="toc_ref">1.6</span> <span class="toc_entry">Tseitin encoding</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000019"><span class="toc_ref">1.7</span> <span class="toc_entry">Atoms and subformulas</span></a>
+  <a href="sect0001.html#a0000000020"><span class="toc_ref">1.7</span> <span class="toc_entry">Atoms and subformulas</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000023"><span class="toc_ref">1.8</span> <span class="toc_entry">Semantics of derived connectives</span></a>
+  <a href="sect0001.html#a0000000024"><span class="toc_ref">1.8</span> <span class="toc_entry">Semantics of derived connectives</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000031"><span class="toc_ref">1.9</span> <span class="toc_entry">Auxiliary lemmas for Tseitin encoding</span></a>
+  <a href="sect0001.html#a0000000032"><span class="toc_ref">1.9</span> <span class="toc_entry">Auxiliary lemmas for Tseitin encoding</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000032"><span class="toc_ref">1.10</span> <span class="toc_entry">Subformulas and Proper Subformulas</span></a>
+  <a href="sect0001.html#a0000000036"><span class="toc_ref">1.10</span> <span class="toc_entry">Subformulas and Proper Subformulas</span></a>
  </li>
 <li class="">
-  <a href="sect0001.html#a0000000034"><span class="toc_ref">1.11</span> <span class="toc_entry">Tseitin Equivalence</span></a>
+  <a href="sect0001.html#a0000000046"><span class="toc_ref">1.11</span> <span class="toc_entry">Tseitin Equivalence</span></a>
  </li>
 
   </ul>
@@ -134,15 +134,57 @@
 
   </div>
 </div>
-<p>  We write \(\neg \mathsf{Formula}\) for \(\mathsf{Neg}(\mathsf{Formula})\) when the notation is nonambiguous.  </p>
-<p>  We write \(f_1 \to f_2\) for \(\mathsf{Imp}(f_1, f_2)\) when the notation is nonambiguous.  </p>
+<div class="notation_thmwrapper theorem-style-plain" id="neg_notation">
+  <div class="notation_thmheading">
+    <span class="notation_thmcaption">
+    Notation
+    </span>
+    <span class="notation_thmlabel">1.2</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#neg_notation">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="notation_thmcontent">
+  <p> We write \(\neg \mathsf{Formula}\) for \(\mathsf{Neg}(\mathsf{Formula})\) when the notation is nonambiguous. </p>
+
+  </div>
+</div>
+<div class="notation_thmwrapper theorem-style-plain" id="imp_notation">
+  <div class="notation_thmheading">
+    <span class="notation_thmcaption">
+    Notation
+    </span>
+    <span class="notation_thmlabel">1.3</span>
+    <div class="thm_header_extras">
+
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#imp_notation">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="notation_thmcontent">
+  <p> We write \(f_1 \to f_2\) for \(\mathsf{Imp}(f_1, f_2)\) when the notation is nonambiguous. </p>
+
+  </div>
+</div>
 <h1 id="a0000000004">1.2 Valuations and Semantics</h1>
 <div class="definition_thmwrapper theorem-style-definition" id="Valuation">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.2</span>
+    <span class="definition_thmlabel">1.4</span>
     <div class="thm_header_extras">
 
     
@@ -180,12 +222,12 @@
 
   </div>
 </div>
-<div class="definition_thmwrapper theorem-style-definition" id="Valuation.eval_notation">
+<div class="definition_thmwrapper theorem-style-definition" id="Valuation.eval">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.3</span>
+    <span class="definition_thmlabel">1.5</span>
     <div class="thm_header_extras">
 
     
@@ -193,7 +235,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Valuation.eval_notation">#</a>
+    <a class="icon proof" href="sect0001.html#Valuation.eval">#</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -210,7 +252,7 @@
           
           <li><a href="sect0001.html#Formula">Definition 1.1</a></li>
           
-          <li><a href="sect0001.html#Valuation">Definition 1.2</a></li>
+          <li><a href="sect0001.html#Valuation">Definition 1.4</a></li>
           
         </ul>
     
@@ -248,13 +290,36 @@
 
   </div>
 </div>
-<p>  We write \(v[f]\) for \(v.\mathsf{eval}(f)\).  </p>
+<div class="notation_thmwrapper theorem-style-plain" id="Valuation.eval_notation">
+  <div class="notation_thmheading">
+    <span class="notation_thmcaption">
+    Notation
+    </span>
+    <span class="notation_thmlabel">1.6</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#Valuation.eval_notation">#</a>
+    
+    
+    
+        </div>
+  </div>
+  <div class="notation_thmcontent">
+  <p> We write \(v[f]\) for \(v.\mathsf{eval}(f)\). </p>
+
+  </div>
+</div>
 <div class="definition_thmwrapper theorem-style-definition" id="Satisfies">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.4</span>
+    <span class="definition_thmlabel">1.7</span>
     <div class="thm_header_extras">
 
     
@@ -277,7 +342,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Valuation.eval_notation">Definition 1.3</a></li>
+          <li><a href="sect0001.html#Valuation.eval">Definition 1.5</a></li>
           
         </ul>
     
@@ -317,7 +382,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.5</span>
+    <span class="definition_thmlabel">1.8</span>
     <div class="thm_header_extras">
 
     
@@ -340,7 +405,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Satisfies">Definition 1.4</a></li>
+          <li><a href="sect0001.html#Satisfies">Definition 1.7</a></li>
           
         </ul>
     
@@ -381,7 +446,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.6</span>
+    <span class="definition_thmlabel">1.9</span>
     <div class="thm_header_extras">
 
     
@@ -447,7 +512,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.7</span>
+    <span class="definition_thmlabel">1.10</span>
     <div class="thm_header_extras">
 
     
@@ -470,7 +535,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#And">Definition 1.6</a></li>
+          <li><a href="sect0001.html#And">Definition 1.9</a></li>
           
         </ul>
     
@@ -513,7 +578,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.8</span>
+    <span class="definition_thmlabel">1.11</span>
     <div class="thm_header_extras">
 
     
@@ -536,7 +601,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#And">Definition 1.6</a></li>
+          <li><a href="sect0001.html#And">Definition 1.9</a></li>
           
         </ul>
     
@@ -580,7 +645,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.9</span>
+    <span class="definition_thmlabel">1.12</span>
     <div class="thm_header_extras">
 
     
@@ -643,7 +708,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.10</span>
+    <span class="lemma_thmlabel">1.13</span>
     <div class="thm_header_extras">
 
     
@@ -652,6 +717,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#NonAtomic.neg">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000011"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -666,7 +734,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#NonAtomic">Definition 1.9</a></li>
+          <li><a href="sect0001.html#NonAtomic">Definition 1.12</a></li>
           
         </ul>
     
@@ -701,12 +769,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000011">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="NonAtomic.imp">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.11</span>
+    <span class="lemma_thmlabel">1.14</span>
     <div class="thm_header_extras">
 
     
@@ -716,7 +796,7 @@
 
     <a class="icon proof" href="sect0001.html#NonAtomic.imp">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000011"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000012"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -732,7 +812,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#NonAtomic">Definition 1.9</a></li>
+          <li><a href="sect0001.html#NonAtomic">Definition 1.12</a></li>
           
         </ul>
     
@@ -767,7 +847,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000011">
+<div class="proof_wrapper" id="a0000000012">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -779,13 +859,13 @@
 
   </div>
 </div>
-<h1 id="a0000000012">1.5 Injective numbering of formulas</h1>
+<h1 id="a0000000013">1.5 Injective numbering of formulas</h1>
 <div class="lemma_thmwrapper theorem-style-plain" id="Formula.existsChooseFn">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.12</span>
+    <span class="lemma_thmlabel">1.15</span>
     <div class="thm_header_extras">
 
     
@@ -795,7 +875,7 @@
 
     <a class="icon proof" href="sect0001.html#Formula.existsChooseFn">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000013"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000014"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -846,7 +926,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000013">
+<div class="proof_wrapper" id="a0000000014">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -858,13 +938,13 @@
 
   </div>
 </div>
-<h1 id="a0000000014">1.6 Tseitin encoding</h1>
-<div class="definition_thmwrapper theorem-style-definition" id="Tseitin.V">
+<h1 id="a0000000015">1.6 Tseitin encoding</h1>
+<div class="definition_thmwrapper theorem-style-definition" id="V">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.13</span>
+    <span class="definition_thmlabel">1.16</span>
     <div class="thm_header_extras">
 
     
@@ -872,7 +952,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Tseitin.V">#</a>
+    <a class="icon proof" href="sect0001.html#V">#</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -887,7 +967,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Formula.existsChooseFn">Lemma 1.12</a></li>
+          <li><a href="sect0001.html#Formula.existsChooseFn">Lemma 1.15</a></li>
           
         </ul>
     
@@ -918,16 +998,16 @@
         </div>
   </div>
   <div class="definition_thmcontent">
-  <p>   For each formula \(f\), \(V_f\) is the atom given by the injection in <a href="sect0001.html#Formula.existsChooseFn">1.12</a>. </p>
+  <p>   For each formula \(f\), \(V_f\) is the atom given by the injection in <a href="sect0001.html#Formula.existsChooseFn">1.15</a>. </p>
 
   </div>
 </div>
-<div class="definition_thmwrapper theorem-style-definition" id="Tseitin.N">
+<div class="definition_thmwrapper theorem-style-definition" id="N">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.14</span>
+    <span class="definition_thmlabel">1.17</span>
     <div class="thm_header_extras">
 
     
@@ -935,7 +1015,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Tseitin.N">#</a>
+    <a class="icon proof" href="sect0001.html#N">#</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -950,7 +1030,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Tseitin.V">Definition 1.13</a></li>
+          <li><a href="sect0001.html#V">Definition 1.16</a></li>
           
         </ul>
     
@@ -982,18 +1062,18 @@
   </div>
   <div class="definition_thmcontent">
   <p>   For a formula \(f\), \(N(f)\) is the list of formulas </p>
-<div class="displaymath" id="a0000000015">
+<div class="displaymath" id="a0000000016">
   \[  N(f) := \begin{cases}  [\  ] &  f = \mathsf{Atom}(n) \\ \left[ V_f \leftrightarrow \neg V_g \right] &  f = \neg g \\ \left[ V_f \leftrightarrow (V_g \to V_h) \right] &  f = g \to h \end{cases}  \]
 </div>
 
   </div>
 </div>
-<div class="definition_thmwrapper theorem-style-definition" id="Tseitin.Ns">
+<div class="definition_thmwrapper theorem-style-definition" id="Ns">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.15</span>
+    <span class="definition_thmlabel">1.18</span>
     <div class="thm_header_extras">
 
     
@@ -1001,7 +1081,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Tseitin.Ns">#</a>
+    <a class="icon proof" href="sect0001.html#Ns">#</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -1016,7 +1096,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Tseitin.N">Definition 1.14</a></li>
+          <li><a href="sect0001.html#N">Definition 1.17</a></li>
           
         </ul>
     
@@ -1048,19 +1128,19 @@
   </div>
   <div class="definition_thmcontent">
   <p>   For a formula \(f\), \(N^*(f)\) is the list of all \(N(g)\) of all subformulas \(g\) of \(f\). </p>
-<div class="displaymath" id="a0000000016">
+<div class="displaymath" id="a0000000017">
   \[  N^*(f) := \begin{cases}  [\  ] &  f = \mathsf{Atom}(n) \\ N(f) \cup N^*(g) &  f = \neg g \\ N(f) \cup N^*(f_1) \cup N^*(f_2) &  f = f_1 \to f_2 \end{cases}  \]
 </div>
 <p> where \(\cup \) denotes list concatenation. </p>
 
   </div>
 </div>
-<div class="definition_thmwrapper theorem-style-definition" id="Tseitin.T">
+<div class="definition_thmwrapper theorem-style-definition" id="T">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.16</span>
+    <span class="definition_thmlabel">1.19</span>
     <div class="thm_header_extras">
 
     
@@ -1068,7 +1148,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Tseitin.T">#</a>
+    <a class="icon proof" href="sect0001.html#T">#</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -1083,11 +1163,11 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Tseitin.Ns">Definition 1.15</a></li>
+          <li><a href="sect0001.html#Ns">Definition 1.18</a></li>
           
-          <li><a href="sect0001.html#BigAnd">Definition 1.8</a></li>
+          <li><a href="sect0001.html#BigAnd">Definition 1.11</a></li>
           
-          <li><a href="sect0001.html#NonAtomic">Definition 1.9</a></li>
+          <li><a href="sect0001.html#NonAtomic">Definition 1.12</a></li>
           
         </ul>
     
@@ -1119,18 +1199,18 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a non-atomic formula. <em>Tseitin’s T</em> of \(f\) is the conjunction of all \(N(g)\) of all subformulas \(g\) of \(f\). Equivalently, it’s the conjunction of \(N^*(f)\). </p>
-<div class="displaymath" id="a0000000017">
+<div class="displaymath" id="a0000000018">
   \[  T(f) := \bigwedge N^*(f)  \]
 </div>
 
   </div>
 </div>
-<div class="definition_thmwrapper theorem-style-definition" id="Tseitin.E">
+<div class="definition_thmwrapper theorem-style-definition" id="E">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.17</span>
+    <span class="definition_thmlabel">1.20</span>
     <div class="thm_header_extras">
 
     
@@ -1138,7 +1218,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Tseitin.E">#</a>
+    <a class="icon proof" href="sect0001.html#E">#</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -1153,9 +1233,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Tseitin.T">Definition 1.16</a></li>
+          <li><a href="sect0001.html#T">Definition 1.19</a></li>
           
-          <li><a href="sect0001.html#Tseitin.V">Definition 1.13</a></li>
+          <li><a href="sect0001.html#V">Definition 1.16</a></li>
           
         </ul>
     
@@ -1187,19 +1267,19 @@
   </div>
   <div class="definition_thmcontent">
   <p>   Let \(f\) be a formula. The <em>Tseitin encoding</em> \(E(f)\) is \(T(f) \land V_f\) unless \(f\) is atomic, in which case it’s just \(V_f\). </p>
-<div class="displaymath" id="a0000000018">
+<div class="displaymath" id="a0000000019">
   \[  E(f) := \begin{cases}  V_f &  f = \mathsf{Atom}(n) \\ T(f) \wedge V_f &  \text{otherwise}\\ \end{cases}  \]
 </div>
 
   </div>
 </div>
-<h1 id="a0000000019">1.7 Atoms and subformulas</h1>
+<h1 id="a0000000020">1.7 Atoms and subformulas</h1>
 <div class="definition_thmwrapper theorem-style-definition" id="Atoms">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.18</span>
+    <span class="definition_thmlabel">1.21</span>
     <div class="thm_header_extras">
 
     
@@ -1254,7 +1334,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   For a formula \(f\), define \(\mathsf{Atoms}(f)\) to be the (finite) set of indices of all atomic subformulas of \(f\). It is defined recursively as: </p>
-<div class="displaymath" id="a0000000020">
+<div class="displaymath" id="a0000000021">
   \[  \begin{aligned}  \mathsf{Atoms}(\mathsf{Atom}(n)) & := \{ n\}  \\ \mathsf{Atoms}(\neg g) & := \mathsf{Atoms}(g) \\ \mathsf{Atoms}(g \to h) & := \mathsf{Atoms}(g) \cup \mathsf{Atoms}(h) \\ \end{aligned}  \]
 </div>
 
@@ -1265,7 +1345,7 @@
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.19</span>
+    <span class="definition_thmlabel">1.22</span>
     <div class="thm_header_extras">
 
     
@@ -1320,7 +1400,7 @@
   </div>
   <div class="definition_thmcontent">
   <p>   For a formula \(f\), define \(\mathsf{Sub}(f)\) to be the (finite) set of subformulas of \(f\). It is defined recursively as: </p>
-<div class="displaymath" id="a0000000021">
+<div class="displaymath" id="a0000000022">
   \[  \begin{align}  \mathsf{Sub}(\mathsf{Atom}(n)) & := \{ \mathsf{Atom}(n)\}  \\ \mathsf{Sub}(\neg g) & := \{ \neg g\}  \cup \mathsf{Sub}(g) \\ \mathsf{Sub}(g \to h) & := \{ g \to h\}  \cup \mathsf{Sub}(g) \cup \mathsf{Sub}(h) \\ \end{align}  \]
 </div>
 
@@ -1331,7 +1411,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.20</span>
+    <span class="lemma_thmlabel">1.23</span>
     <div class="thm_header_extras">
 
     
@@ -1341,7 +1421,7 @@
 
     <a class="icon proof" href="sect0001.html#mem_atoms_of_subformula">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000022"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000023"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1357,9 +1437,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Atoms">Definition 1.18</a></li>
+          <li><a href="sect0001.html#Atoms">Definition 1.21</a></li>
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -1394,7 +1474,7 @@
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000022">
+<div class="proof_wrapper" id="a0000000023">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1406,100 +1486,23 @@
 
   </div>
 </div>
-<h1 id="a0000000023">1.8 Semantics of derived connectives</h1>
-<div class="lemma_thmwrapper theorem-style-plain" id="BigAnd.append">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">1.21</span>
-    <div class="thm_header_extras">
-
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0001.html#BigAnd.append">#</a>
-    
-    <a class="icon proof" href="sect0001.html#a0000000024"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
-</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sect0001.html#BigAnd">Definition 1.8</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.BigAnd.append" class="lean_decl">LHCP.BigAnd.append</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   For nonempty lists of formulas \(f, g\): </p>
-<div class="displaymath" id="a0000000025">
-  \[  \bigwedge (f \cup g) = \left(\bigwedge f\right) \wedge \left(\bigwedge g\right).  \]
-</div>
-
-  </div>
-</div>
-<div class="proof_wrapper" id="a0000000024">
-  <div class="proof_heading">
-    <span class="proof_caption">
-    Proof
-    </span>
-    <span class="expand-proof">▶</span>
-  </div>
-  <div class="proof_content">
-  <p>By induction on \(f\). </p>
-
-  </div>
-</div>
+<h1 id="a0000000024">1.8 Semantics of derived connectives</h1>
 <div class="lemma_thmwrapper theorem-style-plain" id="BigAnd.cons">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.22</span>
+    <span class="lemma_thmlabel">1.24</span>
     <div class="thm_header_extras">
 
+    
+    ✓
         </div>
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#BigAnd.cons">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000026"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000025"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1515,7 +1518,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#BigAnd">Definition 1.8</a></li>
+          <li><a href="sect0001.html#BigAnd">Definition 1.11</a></li>
           
         </ul>
     
@@ -1535,7 +1538,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.BigAnd.cons" class="lean_decl">LHCP.BigAnd.cons</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.BigAnd.cons" class="lean_decl">LHCP.Tseitin.BigAnd.cons</a></li>
           
         </ul>
     
@@ -1547,13 +1550,13 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   For a formula \(f\) and a nonempty list of formulas \(fs\): </p>
-<div class="displaymath" id="a0000000027">
+<div class="displaymath" id="a0000000026">
   \[  \bigwedge (f :: fs) = f \wedge \bigwedge fs.  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000026">
+<div class="proof_wrapper" id="a0000000025">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1570,15 +1573,17 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.23</span>
+    <span class="lemma_thmlabel">1.25</span>
     <div class="thm_header_extras">
 
+    
+    ✓
         </div>
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#BigAnd.single">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000028"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000027"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -1594,7 +1599,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#BigAnd">Definition 1.8</a></li>
+          <li><a href="sect0001.html#BigAnd">Definition 1.11</a></li>
           
         </ul>
     
@@ -1614,7 +1619,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.BigAnd.single" class="lean_decl">LHCP.BigAnd.single</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.BigAnd.single" class="lean_decl">LHCP.Tseitin.BigAnd.single</a></li>
           
         </ul>
     
@@ -1626,13 +1631,13 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   For a single-element list: </p>
-<div class="displaymath" id="a0000000029">
+<div class="displaymath" id="a0000000028">
   \[  \bigwedge [f] = f.  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000028">
+<div class="proof_wrapper" id="a0000000027">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -1649,13 +1654,18 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.24</span>
+    <span class="lemma_thmlabel">1.26</span>
     <div class="thm_header_extras">
 
+    
+    ✓
         </div>
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#Satisfies.and">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000029"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -1670,9 +1680,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Satisfies">Definition 1.4</a></li>
+          <li><a href="sect0001.html#Satisfies">Definition 1.7</a></li>
           
-          <li><a href="sect0001.html#And">Definition 1.6</a></li>
+          <li><a href="sect0001.html#And">Definition 1.9</a></li>
           
         </ul>
     
@@ -1692,7 +1702,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Satisfies.and" class="lean_decl">LHCP.Satisfies.and</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Satisfies.and" class="lean_decl">LHCP.Tseitin.Satisfies.and</a></li>
           
         </ul>
     
@@ -1707,75 +1717,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000029">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="Satisfies.iff">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.25</span>
-    <div class="thm_header_extras">
-
-        </div>
-    <div class="thm_header_hidden_extras">
-
-    <a class="icon proof" href="sect0001.html#Satisfies.iff">#</a>
-    
-    
-    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
-</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Uses</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="sect0001.html#Satisfies">Definition 1.4</a></li>
-          
-          <li><a href="sect0001.html#Iff">Definition 1.7</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-    
-    <button class="modal lean">L∃∀N</button>
-        <div class="modal-container">
-      <div class="modal-content">
-        <header>
-          <h1>Lean declarations</h1>
-          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
-</button>
-        </header>
-        
-        <ul class="uses">
-          
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Satisfies.iff" class="lean_decl">LHCP.Satisfies.iff</a></li>
-          
-        </ul>
-    
-      </div>
-    </div>
-
-    
-        </div>
-  </div>
-  <div class="lemma_thmcontent">
-  <p>   For any valuation \(w\) and formulas \(f,g\): \(w \models f \leftrightarrow g\) iff \((w \models f) \Leftrightarrow (w \models g)\). </p>
-
-  </div>
-</div>
-<div class="lemma_thmwrapper theorem-style-plain" id="Satisfies.bigAnd">
-  <div class="lemma_thmheading">
-    <span class="lemma_thmcaption">
-    Lemma
-    </span>
-    <span class="lemma_thmlabel">1.26</span>
+    <span class="lemma_thmlabel">1.27</span>
     <div class="thm_header_extras">
 
     
@@ -1783,7 +1742,7 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Satisfies.bigAnd">#</a>
+    <a class="icon proof" href="sect0001.html#Satisfies.iff">#</a>
     
     <a class="icon proof" href="sect0001.html#a0000000030"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
@@ -1801,9 +1760,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Satisfies">Definition 1.4</a></li>
+          <li><a href="sect0001.html#Satisfies">Definition 1.7</a></li>
           
-          <li><a href="sect0001.html#And">Definition 1.6</a></li>
+          <li><a href="sect0001.html#Iff">Definition 1.10</a></li>
           
         </ul>
     
@@ -1823,7 +1782,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Satisfies.bigAnd" class="lean_decl">LHCP.Satisfies.bigAnd</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Satisfies.iff" class="lean_decl">LHCP.Tseitin.Satisfies.iff</a></li>
           
         </ul>
     
@@ -1834,7 +1793,7 @@
         </div>
   </div>
   <div class="lemma_thmcontent">
-  <p>   For any valuation \(w\) and a nonempty list of formulas \(l\), \(w \models \bigwedge l\) iff \(w \models g\) for all \(g \in l\). </p>
+  <p>   For any valuation \(w\) and formulas \(f,g\): \(w \models f \leftrightarrow g\) iff \((w \models f) \Leftrightarrow (w \models g)\). </p>
 
   </div>
 </div>
@@ -1850,13 +1809,12 @@
 
   </div>
 </div>
-<h1 id="a0000000031">1.9 Auxiliary lemmas for Tseitin encoding</h1>
-<div class="lemma_thmwrapper theorem-style-plain" id="Ns_eq_empty_iff">
+<div class="lemma_thmwrapper theorem-style-plain" id="Satisfies.bigAnd">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.27</span>
+    <span class="lemma_thmlabel">1.28</span>
     <div class="thm_header_extras">
 
     
@@ -1864,7 +1822,10 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#Ns_eq_empty_iff">#</a>
+    <a class="icon proof" href="sect0001.html#Satisfies.bigAnd">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000031"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -1879,9 +1840,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#NonAtomic">Definition 1.9</a></li>
+          <li><a href="sect0001.html#Satisfies">Definition 1.7</a></li>
           
-          <li><a href="sect0001.html#Tseitin.Ns">Definition 1.15</a></li>
+          <li><a href="sect0001.html#And">Definition 1.9</a></li>
           
         </ul>
     
@@ -1901,7 +1862,88 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Ns_eq_empty_iff" class="lean_decl">LHCP.Ns_eq_empty_iff</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Satisfies.bigAnd" class="lean_decl">LHCP.Tseitin.Satisfies.bigAnd</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   For any valuation \(w\) and a nonempty list of formulas \(l\), \(w \models \bigwedge l\) iff \(w \models g\) for all \(g \in l\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000031">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
+<h1 id="a0000000032">1.9 Auxiliary lemmas for Tseitin encoding</h1>
+<div class="lemma_thmwrapper theorem-style-plain" id="Ns_eq_empty_iff">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.29</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#Ns_eq_empty_iff">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000033"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#NonAtomic">Definition 1.12</a></li>
+          
+          <li><a href="sect0001.html#Ns">Definition 1.18</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Ns_eq_empty_iff" class="lean_decl">LHCP.Tseitin.Ns_eq_empty_iff</a></li>
           
         </ul>
     
@@ -1916,12 +1958,24 @@
 
   </div>
 </div>
-<div class="lemma_thmwrapper theorem-style-plain" id="not_nonAtomic">
+<div class="proof_wrapper" id="a0000000033">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="N_sub_subset_Ns">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.28</span>
+    <span class="lemma_thmlabel">1.30</span>
     <div class="thm_header_extras">
 
     
@@ -1929,7 +1983,10 @@
         </div>
     <div class="thm_header_hidden_extras">
 
-    <a class="icon proof" href="sect0001.html#not_nonAtomic">#</a>
+    <a class="icon proof" href="sect0001.html#N_sub_subset_Ns">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000034"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -1944,7 +2001,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#NonAtomic">Definition 1.9</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
+          
+          <li><a href="sect0001.html#Ns">Definition 1.18</a></li>
           
         </ul>
     
@@ -1964,7 +2023,85 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.not_nonAtomic" class="lean_decl">LHCP.not_nonAtomic</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.N_sub_subset_Ns" class="lean_decl">LHCP.Tseitin.N_sub_subset_Ns</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+        </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>   If \(s\) is a subformula of \(f\), then \(N(s) \subseteq N^*(f)\). </p>
+
+  </div>
+</div>
+<div class="proof_wrapper" id="a0000000034">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  <p>By induction in \(f\). </p>
+
+  </div>
+</div>
+<div class="lemma_thmwrapper theorem-style-plain" id="not_nonAtomic">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">1.31</span>
+    <div class="thm_header_extras">
+
+    
+    ✓
+        </div>
+    <div class="thm_header_hidden_extras">
+
+    <a class="icon proof" href="sect0001.html#not_nonAtomic">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    
+    
+    <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
+</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Uses</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="sect0001.html#NonAtomic">Definition 1.12</a></li>
+          
+        </ul>
+    
+      </div>
+    </div>
+
+    
+    
+    <button class="modal lean">L∃∀N</button>
+        <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+        
+        <ul class="uses">
+          
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.not_nonAtomic" class="lean_decl">LHCP.Tseitin.not_nonAtomic</a></li>
           
         </ul>
     
@@ -1979,13 +2116,25 @@
 
   </div>
 </div>
-<h1 id="a0000000032">1.10 Subformulas and Proper Subformulas</h1>
+<div class="proof_wrapper" id="a0000000035">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
+<h1 id="a0000000036">1.10 Subformulas and Proper Subformulas</h1>
 <div class="lemma_thmwrapper theorem-style-plain" id="sub_self">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.29</span>
+    <span class="lemma_thmlabel">1.32</span>
     <div class="thm_header_extras">
 
     
@@ -1994,6 +2143,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#sub_self">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2008,7 +2160,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -2028,7 +2180,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.sub_self" class="lean_decl">LHCP.sub_self</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_self" class="lean_decl">LHCP.Tseitin.sub_self</a></li>
           
         </ul>
     
@@ -2043,12 +2195,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000037">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="sub_neg">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.30</span>
+    <span class="lemma_thmlabel">1.33</span>
     <div class="thm_header_extras">
 
     
@@ -2057,6 +2221,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#sub_neg">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000038"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2071,7 +2238,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -2091,7 +2258,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.sub_neg" class="lean_decl">LHCP.sub_neg</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_neg" class="lean_decl">LHCP.Tseitin.sub_neg</a></li>
           
         </ul>
     
@@ -2106,12 +2273,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000038">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="sub_imp">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.31</span>
+    <span class="lemma_thmlabel">1.34</span>
     <div class="thm_header_extras">
 
     
@@ -2120,6 +2299,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#sub_imp">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2134,7 +2316,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -2154,7 +2336,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.sub_imp" class="lean_decl">LHCP.sub_imp</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_imp" class="lean_decl">LHCP.Tseitin.sub_imp</a></li>
           
         </ul>
     
@@ -2169,18 +2351,35 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000039">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="neg_sub">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.32</span>
+    <span class="lemma_thmlabel">1.35</span>
     <div class="thm_header_extras">
 
+    
+    ✓
         </div>
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#neg_sub">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000040"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2195,9 +2394,9 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
-          <li><a href="sect0001.html#sub_self">Lemma 1.29</a></li>
+          <li><a href="sect0001.html#sub_self">Lemma 1.32</a></li>
           
         </ul>
     
@@ -2217,7 +2416,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.neg_sub" class="lean_decl">LHCP.neg_sub</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.neg_sub" class="lean_decl">LHCP.Tseitin.neg_sub</a></li>
           
         </ul>
     
@@ -2232,12 +2431,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000040">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="imp_sub">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.33</span>
+    <span class="lemma_thmlabel">1.36</span>
     <div class="thm_header_extras">
 
     
@@ -2246,6 +2457,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#imp_sub">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000041"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2260,7 +2474,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -2280,7 +2494,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/imp_sub" class="lean_decl">imp_sub</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.imp_sub" class="lean_decl">LHCP.Tseitin.imp_sub</a></li>
           
         </ul>
     
@@ -2295,12 +2509,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000041">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="definition_thmwrapper theorem-style-definition" id="Ssub">
   <div class="definition_thmheading">
     <span class="definition_thmcaption">
     Definition
     </span>
-    <span class="definition_thmlabel">1.34</span>
+    <span class="definition_thmlabel">1.37</span>
     <span class="definition_thmtitle">Proper subformula</span>
     <div class="thm_header_extras">
 
@@ -2324,7 +2550,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -2344,7 +2570,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/Ssub" class="lean_decl">Ssub</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.Ssub" class="lean_decl">LHCP.Tseitin.Ssub</a></li>
           
         </ul>
     
@@ -2357,7 +2583,7 @@
   <div class="definition_thmcontent">
   <p>    \(g\) is a proper subformula of \(f\) it is a subformula and not equal to \(f\). </p>
 <p>Let \(\mathsf{Ssub}(f)\) denote the set of proper subformulas of \(f\), i.e. </p>
-<div class="displaymath" id="a0000000033">
+<div class="displaymath" id="a0000000042">
   \[  \mathsf{Ssub}(f) := \mathsf{Sub}(f) \setminus \{  f \} .  \]
 </div>
 
@@ -2368,7 +2594,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.35</span>
+    <span class="lemma_thmlabel">1.38</span>
     <div class="thm_header_extras">
 
     
@@ -2377,6 +2603,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#sub_smaller">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000043"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2391,7 +2620,7 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Sub">Definition 1.19</a></li>
+          <li><a href="sect0001.html#Sub">Definition 1.22</a></li>
           
         </ul>
     
@@ -2411,7 +2640,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/sub_smaller" class="lean_decl">sub_smaller</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.sub_smaller" class="lean_decl">LHCP.Tseitin.sub_smaller</a></li>
           
         </ul>
     
@@ -2426,12 +2655,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000043">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="neg_ssub">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.36</span>
+    <span class="lemma_thmlabel">1.39</span>
     <div class="thm_header_extras">
 
     
@@ -2440,6 +2681,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#neg_ssub">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000044"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2454,11 +2698,11 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Ssub">Definition 1.34</a></li>
+          <li><a href="sect0001.html#Ssub">Definition 1.37</a></li>
           
-          <li><a href="sect0001.html#neg_sub">Lemma 1.32</a></li>
+          <li><a href="sect0001.html#neg_sub">Lemma 1.35</a></li>
           
-          <li><a href="sect0001.html#sub_smaller">Lemma 1.35</a></li>
+          <li><a href="sect0001.html#sub_smaller">Lemma 1.38</a></li>
           
         </ul>
     
@@ -2478,7 +2722,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/neg_ssub" class="lean_decl">neg_ssub</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.neg_ssub" class="lean_decl">LHCP.Tseitin.neg_ssub</a></li>
           
         </ul>
     
@@ -2493,12 +2737,24 @@
 
   </div>
 </div>
+<div class="proof_wrapper" id="a0000000044">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
 <div class="lemma_thmwrapper theorem-style-plain" id="imp_ssub">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.37</span>
+    <span class="lemma_thmlabel">1.40</span>
     <div class="thm_header_extras">
 
     
@@ -2507,6 +2763,9 @@
     <div class="thm_header_hidden_extras">
 
     <a class="icon proof" href="sect0001.html#imp_ssub">#</a>
+    
+    <a class="icon proof" href="sect0001.html#a0000000045"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
     
     
     <button class="modal"><svg  class="icon icon-mindmap "><use xlink:href="symbol-defs.svg#icon-mindmap"></use></svg>
@@ -2521,11 +2780,11 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Ssub">Definition 1.34</a></li>
+          <li><a href="sect0001.html#Ssub">Definition 1.37</a></li>
           
-          <li><a href="sect0001.html#imp_sub">Lemma 1.33</a></li>
+          <li><a href="sect0001.html#imp_sub">Lemma 1.36</a></li>
           
-          <li><a href="sect0001.html#sub_smaller">Lemma 1.35</a></li>
+          <li><a href="sect0001.html#sub_smaller">Lemma 1.38</a></li>
           
         </ul>
     
@@ -2545,7 +2804,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/imp_ssub" class="lean_decl">imp_ssub</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.imp_ssub" class="lean_decl">LHCP.Tseitin.imp_ssub</a></li>
           
         </ul>
     
@@ -2560,13 +2819,25 @@
 
   </div>
 </div>
-<h1 id="a0000000034">1.11 Tseitin Equivalence</h1>
+<div class="proof_wrapper" id="a0000000045">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▶</span>
+  </div>
+  <div class="proof_content">
+  
+
+  </div>
+</div>
+<h1 id="a0000000046">1.11 Tseitin Equivalence</h1>
 <div class="lemma_thmwrapper theorem-style-plain" id="eval_not">
   <div class="lemma_thmheading">
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.38</span>
+    <span class="lemma_thmlabel">1.41</span>
     <div class="thm_header_extras">
 
     
@@ -2576,7 +2847,7 @@
 
     <a class="icon proof" href="sect0001.html#eval_not">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000035"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000047"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -2592,9 +2863,13 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Satisfies.iff">Lemma 1.25</a></li>
+          <li><a href="sect0001.html#T">Definition 1.19</a></li>
           
-          <li><a href="sect0001.html#Satisfies.bigAnd">Lemma 1.26</a></li>
+          <li><a href="sect0001.html#N_sub_subset_Ns">Lemma 1.30</a></li>
+          
+          <li><a href="sect0001.html#Satisfies.iff">Lemma 1.27</a></li>
+          
+          <li><a href="sect0001.html#Satisfies.bigAnd">Lemma 1.28</a></li>
           
         </ul>
     
@@ -2614,7 +2889,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/eval_not" class="lean_decl">eval_not</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.eval_not" class="lean_decl">LHCP.Tseitin.eval_not</a></li>
           
         </ul>
     
@@ -2626,13 +2901,13 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   If \(f\) is non-atomic and \(w \models T(f)\), then for every \(g\) such that \(\neg g\) is a subformula of \(f\), we have </p>
-<div class="displaymath" id="a0000000036">
+<div class="displaymath" id="a0000000048">
   \[  w(V_{\neg g}) = \neg \,  w(V_g).  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000035">
+<div class="proof_wrapper" id="a0000000047">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2640,7 +2915,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>The clause \(V_{\neg g} \leftrightarrow \neg V_g\) is in \(N(\neg g)\), hence it is in \(N^*(f)\). Since \(w \models T(f)\), \(w \models g\), for all clauses \(g\) in the conjuction \(T(f) = \bigwedge N^*(f)\). Therefore \(w \models V_{\neg g} \leftrightarrow \neg V_g\) which by <a href="sect0001.html#Satisfies.iff">1.25</a> is the equality we are looking for. </p>
+  <p>The clause \(V_{\neg g} \leftrightarrow \neg V_g\) is in \(N(\neg g)\), hence it is in \(N^*(f)\). Since \(w \models T(f)\), \(w \models g\), for all clauses \(g\) in the conjuction \(T(f) = \bigwedge N^*(f)\). Therefore \(w \models V_{\neg g} \leftrightarrow \neg V_g\) which by <a href="sect0001.html#Satisfies.iff">1.27</a> is the equality we are looking for. </p>
 
   </div>
 </div>
@@ -2649,7 +2924,7 @@
     <span class="lemma_thmcaption">
     Lemma
     </span>
-    <span class="lemma_thmlabel">1.39</span>
+    <span class="lemma_thmlabel">1.42</span>
     <div class="thm_header_extras">
 
     
@@ -2659,7 +2934,7 @@
 
     <a class="icon proof" href="sect0001.html#eval_imp">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000037"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000049"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -2675,9 +2950,13 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Satisfies.iff">Lemma 1.25</a></li>
+          <li><a href="sect0001.html#T">Definition 1.19</a></li>
           
-          <li><a href="sect0001.html#Satisfies.bigAnd">Lemma 1.26</a></li>
+          <li><a href="sect0001.html#N_sub_subset_Ns">Lemma 1.30</a></li>
+          
+          <li><a href="sect0001.html#Satisfies.iff">Lemma 1.27</a></li>
+          
+          <li><a href="sect0001.html#Satisfies.bigAnd">Lemma 1.28</a></li>
           
         </ul>
     
@@ -2697,7 +2976,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/eval_imp" class="lean_decl">eval_imp</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.eval_imp" class="lean_decl">LHCP.Tseitin.eval_imp</a></li>
           
         </ul>
     
@@ -2709,13 +2988,13 @@
   </div>
   <div class="lemma_thmcontent">
   <p>   If \(f\) is non-atomic and \(w \models T(f)\), then for every \(g_1, g_2\) such that \((g_1 \to g_2)\) is a subformula of \(f\), we have </p>
-<div class="displaymath" id="a0000000038">
+<div class="displaymath" id="a0000000050">
   \[  w(V_{(g_1 \to g_2)}) = (\neg w(V_{g_1}) \; \lor \;  w(V_{g_2})).  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000037">
+<div class="proof_wrapper" id="a0000000049">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2723,7 +3002,7 @@
     <span class="expand-proof">▶</span>
   </div>
   <div class="proof_content">
-  <p>As with <a href="sect0001.html#eval_not">1.38</a>, the clause \(V_{(g_1 \to g_2)} \leftrightarrow (V_{g_1} \to V_{g_2})\) lies in \(N^*(f)\), and is therefore satisfied by \(w\). </p>
+  <p>As with <a href="sect0001.html#eval_not">1.41</a>, the clause \(V_{(g_1 \to g_2)} \leftrightarrow (V_{g_1} \to V_{g_2})\) lies in \(N^*(f)\), and is therefore satisfied by \(w\). </p>
 
   </div>
 </div>
@@ -2732,7 +3011,7 @@
     <span class="theorem_thmcaption">
     Theorem
     </span>
-    <span class="theorem_thmlabel">1.40</span>
+    <span class="theorem_thmlabel">1.43</span>
     <div class="thm_header_extras">
 
     
@@ -2742,7 +3021,7 @@
 
     <a class="icon proof" href="sect0001.html#eval_eq_of_mem_ssub">#</a>
     
-    <a class="icon proof" href="sect0001.html#a0000000039"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+    <a class="icon proof" href="sect0001.html#a0000000051"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
 </a>
     
     
@@ -2758,17 +3037,19 @@
         
         <ul class="uses">
           
-          <li><a href="sect0001.html#Atoms">Definition 1.18</a></li>
+          <li><a href="sect0001.html#T">Definition 1.19</a></li>
           
-          <li><a href="sect0001.html#mem_atoms_of_subformula">Lemma 1.20</a></li>
+          <li><a href="sect0001.html#Atoms">Definition 1.21</a></li>
           
-          <li><a href="sect0001.html#neg_ssub">Lemma 1.36</a></li>
+          <li><a href="sect0001.html#mem_atoms_of_subformula">Lemma 1.23</a></li>
           
-          <li><a href="sect0001.html#imp_ssub">Lemma 1.37</a></li>
+          <li><a href="sect0001.html#neg_ssub">Lemma 1.39</a></li>
           
-          <li><a href="sect0001.html#eval_not">Lemma 1.38</a></li>
+          <li><a href="sect0001.html#imp_ssub">Lemma 1.40</a></li>
           
-          <li><a href="sect0001.html#eval_imp">Lemma 1.39</a></li>
+          <li><a href="sect0001.html#eval_not">Lemma 1.41</a></li>
+          
+          <li><a href="sect0001.html#eval_imp">Lemma 1.42</a></li>
           
         </ul>
     
@@ -2788,7 +3069,7 @@
         
         <ul class="uses">
           
-          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/eval_eq_of_mem_ssub" class="lean_decl">eval_eq_of_mem_ssub</a></li>
+          <li><a href="https://xhalo32.github.io/LHCP/docs/find/#doc/LHCP.Tseitin.eval_eq_of_mem_ssub" class="lean_decl">LHCP.Tseitin.eval_eq_of_mem_ssub</a></li>
           
         </ul>
     
@@ -2800,13 +3081,13 @@
   </div>
   <div class="theorem_thmcontent">
   <p>   Let \(f\) be non-atomic such that \(w \models T(f)\). If \(v\) and \(w\) agree on all atomic variables of \(f\), then for every proper subformula \(g\) of \(f\) we have </p>
-<div class="displaymath" id="a0000000040">
+<div class="displaymath" id="a0000000052">
   \[  w(V_g) = v[g].  \]
 </div>
 
   </div>
 </div>
-<div class="proof_wrapper" id="a0000000039">
+<div class="proof_wrapper" id="a0000000051">
   <div class="proof_heading">
     <span class="proof_caption">
     Proof
@@ -2818,9 +3099,9 @@
 <ul class="itemize">
   <li><p><em>Case \(g=\mathsf{Atom}(n)\):</em> follows from hypothesis that \(v\) and \(w\) agree on atoms. </p>
 </li>
-  <li><p><em>Case \(g=\neg h\):</em> use <a href="sect0001.html#eval_not">1.38</a> and the induction hypothesis on \(h\) with <a href="sect0001.html#neg_ssub">1.36</a>. </p>
+  <li><p><em>Case \(g=\neg h\):</em> use <a href="sect0001.html#eval_not">1.41</a> and the induction hypothesis on \(h\) with <a href="sect0001.html#neg_ssub">1.39</a>. </p>
 </li>
-  <li><p><em>Case \(g=(g_1 \to g_2)\):</em> use <a href="sect0001.html#eval_imp">1.39</a> and the induction hypotheses on \(g_1,g_2\) with <a href="sect0001.html#imp_ssub">1.37</a>. </p>
+  <li><p><em>Case \(g=(g_1 \to g_2)\):</em> use <a href="sect0001.html#eval_imp">1.42</a> and the induction hypotheses on \(g_1,g_2\) with <a href="sect0001.html#imp_ssub">1.40</a>. </p>
 </li>
 </ul>
 

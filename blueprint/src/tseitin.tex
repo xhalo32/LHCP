@@ -126,6 +126,9 @@ of formulas, valuations, and the notions of satisfiability.
     \uses{NonAtomic}
     For any formula $f$, $\neg f$ is non-atomic.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{NonAtomic.imp}
@@ -156,7 +159,7 @@ of formulas, valuations, and the notions of satisfiability.
 \section{Tseitin encoding}
 
 \begin{definition}
-    \label{Tseitin.V}
+    \label{V}
     \lean{LHCP.Tseitin.V}
     \leanok
     \uses{Formula.existsChooseFn}
@@ -164,10 +167,10 @@ of formulas, valuations, and the notions of satisfiability.
 \end{definition}
 
 \begin{definition}
-    \label{Tseitin.N}
+    \label{N}
     \lean{LHCP.Tseitin.N}
     \leanok
-    \uses{Tseitin.V}
+    \uses{V}
     For a formula $f$, $N(f)$ is the list of formulas
     \[
     N(f) := \begin{cases}
@@ -179,10 +182,10 @@ of formulas, valuations, and the notions of satisfiability.
 \end{definition}
 
 \begin{definition}
-    \label{Tseitin.Ns}
+    \label{Ns}
     \lean{LHCP.Tseitin.Ns}
     \leanok
-    \uses{Tseitin.N}
+    \uses{N}
     For a formula $f$, $N^*(f)$ is the list of all $N(g)$ of all subformulas $g$ of $f$.
     \[
     N^*(f) :=
@@ -196,10 +199,10 @@ of formulas, valuations, and the notions of satisfiability.
 \end{definition}
 
 \begin{definition}
-    \label{Tseitin.T}
+    \label{T}
     \lean{LHCP.Tseitin.T}
     \leanok
-    \uses{Tseitin.Ns, BigAnd, NonAtomic}
+    \uses{Ns, BigAnd, NonAtomic}
     Let $f$ be a non-atomic formula.
     \emph{Tseitin's T} of $f$ is the conjunction of all $N(g)$ of all subformulas $g$ of $f$.
     Equivalently, it's the conjunction of $N^*(f)$.
@@ -209,10 +212,10 @@ of formulas, valuations, and the notions of satisfiability.
 \end{definition}
 
 \begin{definition}
-    \label{Tseitin.E}
+    \label{E}
     \lean{LHCP.Tseitin.E}
     \leanok
-    \uses{Tseitin.T, Tseitin.V}
+    \uses{T, V}
     Let $f$ be a formula.
     The \emph{Tseitin encoding} $E(f)$ is $T(f) \land V_f$ unless $f$ is atomic, in which case it's just $V_f$.
     \[
@@ -274,21 +277,9 @@ of formulas, valuations, and the notions of satisfiability.
 \section{Semantics of derived connectives}
 
 \begin{lemma}
-    \label{BigAnd.append}
-    \lean{LHCP.BigAnd.append}
-    \uses{BigAnd}
-    For nonempty lists of formulas $f, g$:
-    \[
-    \bigwedge (f \cup g) = \left(\bigwedge f\right) \wedge \left(\bigwedge g\right).
-    \]
-\end{lemma}
-\begin{proof}
-    By induction on $f$.
-\end{proof}
-
-\begin{lemma}
     \label{BigAnd.cons}
-    \lean{LHCP.BigAnd.cons}
+    \lean{LHCP.Tseitin.BigAnd.cons}
+    \leanok
     \uses{BigAnd}
     For a formula $f$ and a nonempty list of formulas $fs$:
     \[
@@ -296,12 +287,14 @@ of formulas, valuations, and the notions of satisfiability.
     \]
 \end{lemma}
 \begin{proof}
+    \leanok
     By unfolding the recursive definition of \BigAnd.
 \end{proof}
 
 \begin{lemma}
     \label{BigAnd.single}
-    \lean{LHCP.BigAnd.single}
+    \lean{LHCP.Tseitin.BigAnd.single}
+    \leanok
     \uses{BigAnd}
     For a single-element list:
     \[
@@ -309,26 +302,35 @@ of formulas, valuations, and the notions of satisfiability.
     \]
 \end{lemma}
 \begin{proof}
+    \leanok
     Immediate from the definition of \BigAnd.
 \end{proof}
 
 \begin{lemma}
     \label{Satisfies.and}
-    \lean{LHCP.Satisfies.and}
+    \lean{LHCP.Tseitin.Satisfies.and}
+    \leanok
     \uses{Satisfies, And}
     For any valuation $w$ and formulas $f,g$, $w \models f \wedge g$ iff $w \models f$ and $w \models g$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{Satisfies.iff}
-    \lean{LHCP.Satisfies.iff}
+    \lean{LHCP.Tseitin.Satisfies.iff}
+    \leanok
     \uses{Satisfies, Iff}
     For any valuation $w$ and formulas $f,g$: $w \models f \leftrightarrow g$ iff $(w \models f) \Leftrightarrow (w \models g)$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{Satisfies.bigAnd}
-    \lean{LHCP.Satisfies.bigAnd}
+    \lean{LHCP.Tseitin.Satisfies.bigAnd}
     \leanok
     \uses{Satisfies, And}
     For any valuation $w$ and a nonempty list of formulas $l$, $w \models \bigwedge l$ iff $w \models g$ for all $g \in l$.
@@ -337,68 +339,114 @@ of formulas, valuations, and the notions of satisfiability.
     \leanok
 \end{proof}
 
+% \begin{lemma}
+%     \label{Satisfies.bigAnd_append}
+%     \lean{LHCP.Tseitin.Satisfies.bigAnd_append}
+%     \leanok
+%     \uses{Satisfies, And}
+% TODO
+%     For any valuation $w$ and a nonempty list of formulas $l$, $w \models \bigwedge l$ iff $w \models g$ for all $g \in l$.
+% \end{lemma}
+% \begin{proof}
+%     \leanok
+% \end{proof}
+
 \section{Auxiliary lemmas for Tseitin encoding}
 
 \begin{lemma}
     \label{Ns_eq_empty_iff}
-    \lean{LHCP.Ns_eq_empty_iff}
+    \lean{LHCP.Tseitin.Ns_eq_empty_iff}
     \leanok
-    \uses{NonAtomic, Tseitin.Ns}
+    \uses{NonAtomic, Ns}
     For any formula $f$, $N^*(f)$ is empty iff $f$ is atomic.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
+
+\begin{lemma}
+    \label{N_sub_subset_Ns}
+    \lean{LHCP.Tseitin.N_sub_subset_Ns}
+    \leanok
+    \uses{Sub, Ns}
+    If $s$ is a subformula of $f$, then $N(s) \subseteq N^*(f)$.
+\end{lemma}
+\begin{proof}
+    \leanok
+    By induction in $f$.
+\end{proof}
 
 \begin{lemma}
     \label{not_nonAtomic}
-    \lean{LHCP.not_nonAtomic}
+    \lean{LHCP.Tseitin.not_nonAtomic}
     \leanok
     \uses{NonAtomic}
     For any formula $f$, $f$ is atomic iff there is some $n$ s.t. $f = \Atom(n)$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \section{Subformulas and Proper Subformulas}
 
 \begin{lemma}
     \label{sub_self}
-    \lean{LHCP.sub_self}
+    \lean{LHCP.Tseitin.sub_self}
     \leanok
     \uses{Sub}
     $f$ is a subformula of itself.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{sub_neg}
-    \lean{LHCP.sub_neg}
+    \lean{LHCP.Tseitin.sub_neg}
     \leanok
     \uses{Sub}
     If $g$ is a subformula of $f$, then $g$ is a subformula of $\neg f$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{sub_imp}
-    \lean{LHCP.sub_imp}
+    \lean{LHCP.Tseitin.sub_imp}
     \leanok
     \uses{Sub}
     If $g$ is a subformula of $f_1$ or a subformula of $f_2$, then it is a subformula of $f_1 \to f_2$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{neg_sub}
-    \lean{LHCP.neg_sub}
+    \lean{LHCP.Tseitin.neg_sub}
+    \leanok
     \uses{Sub, sub_self}
     If $\neg g$ is a subformula of $f$, then $g$ is a subformula of $f$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{imp_sub}
-    \lean{imp_sub}
+    \lean{LHCP.Tseitin.imp_sub}
     \leanok
     \uses{Sub}
     If $(g_1 \to g_2)$ is a subformula of $f$, then both $g_1$ and $g_2$ are also subformulas of $f$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{definition}[Proper subformula]
     \label{Ssub}
-    \lean{Ssub}
+    \lean{LHCP.Tseitin.Ssub}
     \leanok
     \uses{Sub}
     $g$ is a proper subformula of $f$ it is a subformula and not equal to $f$.
@@ -411,33 +459,42 @@ of formulas, valuations, and the notions of satisfiability.
 
 \begin{lemma}
     \label{sub_smaller}
-    \lean{sub_smaller}
+    \lean{LHCP.Tseitin.sub_smaller}
     \leanok
     \uses{Sub}
     If $g$ is a subformula of $f$, then $g$ is at most the size of $f$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{neg_ssub}
-    \lean{neg_ssub}
+    \lean{LHCP.Tseitin.neg_ssub}
     \leanok
     \uses{Ssub, neg_sub, sub_smaller}
     If $\neg g$ is a proper subformula of $f$, then $g$ is a proper subformula of $f$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \begin{lemma}
     \label{imp_ssub}
-    \lean{imp_ssub}
+    \lean{LHCP.Tseitin.imp_ssub}
     \leanok
     \uses{Ssub, imp_sub, sub_smaller}
     If $(g_1 \to g_2)$ is a proper subformula of $f$, then both $g_1$ and $g_2$ are proper subformulas of $f$.
 \end{lemma}
+\begin{proof}
+    \leanok
+\end{proof}
 
 \section{Tseitin Equivalence}
 
 \begin{lemma}
     \label{eval_not}
-    \lean{eval_not}
+    \lean{LHCP.Tseitin.eval_not}
     \leanok
     \uses{T, N_sub_subset_Ns, Satisfies.iff, Satisfies.bigAnd}
     If $f$ is non-atomic and $w \models T(f)$, then for every $g$ such that $\neg g$ is a subformula of $f$, we have
@@ -454,7 +511,7 @@ of formulas, valuations, and the notions of satisfiability.
 
 \begin{lemma}
     \label{eval_imp}
-    \lean{eval_imp}
+    \lean{LHCP.Tseitin.eval_imp}
     \leanok
     \uses{T, N_sub_subset_Ns, Satisfies.iff, Satisfies.bigAnd}
     If $f$ is non-atomic and $w \models T(f)$, then for every $g_1, g_2$ such that $(g_1 \to g_2)$ is a subformula of $f$, we have
@@ -469,9 +526,9 @@ of formulas, valuations, and the notions of satisfiability.
 
 \begin{theorem}
     \label{eval_eq_of_mem_ssub}
-    \lean{eval_eq_of_mem_ssub}
+    \lean{LHCP.Tseitin.eval_eq_of_mem_ssub}
     \leanok
-    \uses{Atoms, mem_atoms_of_subformula, neg_ssub, imp_ssub, eval_not, eval_imp}
+    \uses{T, Atoms, mem_atoms_of_subformula, neg_ssub, imp_ssub, eval_not, eval_imp}
     Let $f$ be non-atomic such that $w \models T(f)$.
     If $v$ and $w$ agree on all atomic variables of $f$, then for every proper subformula $g$ of $f$ we have
     \[
